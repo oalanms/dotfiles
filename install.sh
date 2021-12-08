@@ -9,14 +9,18 @@ is_docker && pip3.7 install neovim
 
 # Setup Neovim
 
-rm -rf ${HOME}/.config/nvim/
-mkdir -p ${HOME}/.config/nvim/
-mkdir -p ${HOME}/.config/nvim/snippets/
+NVIM_HOME=${HOME}/.config/nvim/
+NVIM_SNIPPETS=${HOME}/snippets/
 
-cp init.vim ${HOME}/.config/nvim/
-cp coc-settings.json ${HOME}/.config/nvim/
-cp cpp.snippets ${HOME}/.config/nvim/snippets/
+rm -rf ${NVIM_HOME}
+mkdir -p ${NVIM_HOME}
+mkdir -p ${NVIM_SNIPPETS}
 
+cp init.vim ${NVIM_HOME}
+cp coc-settings.json ${NVIM_HOME}
+cp cpp.snippets ${NVIM_SNIPPETS}
+
+# Install VimPlug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 nvim -c "PlugInstall" -c "qa"
