@@ -1,27 +1,2 @@
 {
-    
-    "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "args": ["--resource-dir=/opt/bb/lib/llvm-13.0/lib64/clang/13.0.0/"],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-        }
-    }
 }
