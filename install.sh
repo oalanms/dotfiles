@@ -1,42 +1,29 @@
 #!/bin/bash
 
-is_docker(){
-  [ ! -z ${DOCKER+x} ]
-}
+HOME="/home/alan"
+NVIM_HOME="$HOME/.config/nvim"
+NVIM_LUA_HOME="$NVIM_HOME/lua"
 
-is_docker && apt-get update && apt-get install clang ctags neovim ripgrep git tmux node python3.7 -y
-is_docker && pip3.7 install neovim
+# Install programs
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt install -y nodejs python3.9 pip fzf ripgrep
 
-# Setup Neovim
+sudo npm install -g yarn prettier
 
-NVIM_HOME=${HOME}/.config/nvim/
-NVIM_SNIPPETS=${HOME}/snippets/
+python3.9 -m pip install neovim
 
-rm -rf ${NVIM_HOME}
-mkdir -p ${NVIM_HOME}
-mkdir -p ${NVIM_SNIPPETS}
+# Setup NEOVIM
+mkdir -p $NVIM_LUA_HOME
+cp init.vim $NVIM_HOME
+cp init.lua $NVIM_LUA_HOME
 
-cp init.vim ${NVIM_HOME}
-cp coc-settings.json ${NVIM_HOME}
-cp cpp.snippets ${NVIM_SNIPPETS}
+# Install packer
+PACKER_INSTALL_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+COPILOT_INSTALL_DIR="$HOME/.config/nvim/pack/github/start/copilot.vim"
+[[ ! -d $PACKER_INSTALL_DIR ]] && git clone --depth 1 https://github.com/wbthomason/packer.nvim $PACKER_INSTALL_DIR
 
-# Install VimPlug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+[[ ! -d $COPILOT_INSTALL_DIR ]] && git clone https://github.com/github/copilot.vim.git $COPILOT_INSTALL_DIR
+  
 
-nvim -c "PlugInstall" -c "qa"
-
-# Setup TMUX
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cp .tmux.conf ${HOME}/
-
-cd ~/.tmux/plugins/tpm/bin/
-TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ./install_plugins
-TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ./install_plugins
-cd -
-
-cp .bashrc_extra ${HOME}
-
-if ! grep -q bashrc_extra "${HOME}/.bashrc"; then
-  echo "source ${HOME}/.bashrc_extra" >> ${HOME}/.bashrc
-fi
+nvim -c "PackerSync" -c "qa"
+nvim -c "CocInstall coc-clangd coc-flutter coc-lua coc-prettier" -c "qa"
