@@ -26,4 +26,4 @@ COPILOT_INSTALL_DIR="$HOME/.config/nvim/pack/github/start/copilot.vim"
   
 
 nvim -c "PackerSync" -c "qa"
-nvim -c "CocInstall coc-clangd coc-flutter coc-lua coc-prettier" -c "qa"
+nvim -c "CocInstall coc-clangd coc-flutter coc-lua coc-go coc-prettier" -c "qa"

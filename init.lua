@@ -20,6 +20,10 @@ require('packer').startup(function()
 	use 'luochen1990/rainbow'
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
+	use {
+			'nvim-treesitter/nvim-treesitter',
+			run = ':TSUpdate'
+	}
 
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
@@ -72,15 +76,15 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.keymap.set('n', '<leader>m', ':noh<CR>')
 
-vim.keymap.set('n', '<silent> gd', '<Plug>(coc-definition)')
-vim.keymap.set('n', '<silent> gD', '<Plug>(coc-declaration)')
-vim.keymap.set('n', '<silent> gt', '<Plug>(coc-type-definition)')
-vim.keymap.set('n', '<silent> gr', '<Plug>(coc-references)')
-vim.keymap.set('n', '<silent> gR', '<Plug>(coc-rename)')
-vim.keymap.set('n', '<silent> gn', '<Plug>(coc-diagnostic-next)')
-vim.keymap.set('n', '<silent> gp', '<Plug>(coc-diagnostic-prev)')
-vim.keymap.set('n', '<silent> gb', ':bp<CR>')
-vim.keymap.set('n', '<silent> gA', ':CocAction<CR>')
+vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
+vim.keymap.set('n', 'gD', '<Plug>(coc-declaration)')
+vim.keymap.set('n', 'gt', '<Plug>(coc-type-definition)')
+vim.keymap.set('n', 'gr', '<Plug>(coc-references)')
+vim.keymap.set('n', 'gR', '<Plug>(coc-rename)')
+vim.keymap.set('n', 'gn', '<Plug>(coc-diagnostic-next)')
+vim.keymap.set('n', 'gp', '<Plug>(coc-diagnostic-prev)')
+vim.keymap.set('n', 'gb', ':bp<CR>')
+vim.keymap.set('n', 'gA', ':CocAction<CR>')
 
 vim.keymap.set('n', '<leader>M', '<C-w>_<C-w><Bar> ')
 vim.keymap.set('n', '<leader>m', '<C-w>=')
@@ -121,3 +125,16 @@ vim.api.nvim_create_autocmd("FileType", {
 	})
 
 -- vim.keymap.set('n', '<leader><leader>', ':CocCommand prettier.formatFile')
+--
+require('nvim-treesitter.configs').setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "cpp", "lua", "go", "dart" },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+vim.cmd([[
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Comment' } }
+]])
