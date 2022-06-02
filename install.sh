@@ -15,7 +15,7 @@ python3.9 -m pip install neovim
 # Setup NEOVIM
 mkdir -p $NVIM_LUA_HOME
 cp init.vim $NVIM_HOME
-cp init.lua $NVIM_LUA_HOME
+cp lua/* $NVIM_LUA_HOME
 
 # Install packer
 PACKER_INSTALL_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
