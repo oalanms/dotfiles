@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>g', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_com
 
 vim.o.incsearch = true
 vim.o.ignorecase = true
-vim.keymap.set('n', '<leader>m', ':noh<CR>')
+-- vim.keymap.set('n', '<leader>m', ':noh<CR>')
 
 vim.keymap.set('n', '<leader>1', '1gt')
 vim.keymap.set('n', '<leader>2', '2gt')
@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	})
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"go"}, 
+	pattern = {"go", "dart"}, 
 	callback = function()
 	vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
 	end
