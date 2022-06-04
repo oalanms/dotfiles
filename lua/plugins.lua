@@ -30,6 +30,8 @@ require('packer').startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+	use 'sbdchd/neoformat'
+
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
 end

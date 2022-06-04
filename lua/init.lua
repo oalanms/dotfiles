@@ -20,6 +20,10 @@ vim.o.signcolumn = 'yes'
 vim.o.cmdheight = 2
 vim.o.shortmess = 'c'
 
+vim.cmd([[
+set guifont=Fira\ Code:h14
+]])
+
 require('plugins')
 require('navigation')
 require('style')
