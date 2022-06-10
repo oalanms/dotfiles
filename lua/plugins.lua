@@ -44,6 +44,8 @@ require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
+
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end
 )
 
