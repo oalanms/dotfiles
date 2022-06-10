@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git autojump vi-mode auto-suggestions)
+plugins=(git autojump vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
