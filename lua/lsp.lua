@@ -7,4 +7,3 @@ vim.keymap.set('n', 'gn', '<Plug>(coc-diagnostic-next)')
 vim.keymap.set('n', 'gp', '<Plug>(coc-diagnostic-prev)')
 vim.keymap.set('n', 'gb', ':bp<CR>')
 vim.keymap.set('n', 'gA', ':call CocAction("codeAction")<CR>')
-
