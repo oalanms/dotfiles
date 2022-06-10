@@ -1,6 +1,6 @@
 -- vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 
-vim.o.undodir="~/.config/nvim/undo"
+vim.o.undodir="/home/alan/.config/nvim/undo"
 vim.o.undofile = true
 vim.g.mapleader = ','
 vim.o.syntax = true
