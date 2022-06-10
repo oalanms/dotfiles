@@ -22,7 +22,7 @@ vim.keymap.set('n', '<leader>Q', ':q!<CR>')
                                
 -- Call telescope find files
 vim.keymap.set('n', '<leader>f', function()
-		require('telescope.builtin').find_files()
+		require('telescope.builtin').find_files({hidden=true})
 end)
 
 vim.keymap.set('n', '<leader>g', function()

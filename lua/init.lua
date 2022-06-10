@@ -21,6 +21,7 @@ vim.o.colorcolumn = 80
 vim.o.signcolumn = 'yes'
 vim.o.cmdheight = 2
 vim.o.shortmess = 'c'
+vim.o.mouse = 'a'
 
 vim.cmd([[
 set guifont=Fira\ Code:h14
