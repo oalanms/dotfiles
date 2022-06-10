@@ -25,16 +25,12 @@ vim.keymap.set('n', '<leader>f', function()
 		require('telescope.builtin').find_files()
 end)
 
-vim.keymap.set('n', '<leader>G', function()
+vim.keymap.set('n', '<leader>g', function()
 		require('telescope.builtin').live_grep()
 end)
                                
-vim.keymap.set('n', '<leader>g', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_commands.json}" <C-r>"<CR>')
+-- vim.keymap.set('n', '<leader>g', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_commands.json}" <C-r>"<CR>')
 -- vim.keymap.set('n', '<leader>G', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_commands.json}" ""<Left>')
-
-vim.o.incsearch = true
-vim.o.ignorecase = true
--- vim.keymap.set('n', '<leader>m', ':noh<CR>')
 
 vim.keymap.set('n', '<leader>1', '1gt')
 vim.keymap.set('n', '<leader>2', '2gt')
@@ -45,32 +41,3 @@ vim.keymap.set('n', '<leader>6', '6gt')
 vim.keymap.set('n', '<leader>7', '7gt')
 vim.keymap.set('n', '<leader>8', '8gt')
 vim.keymap.set('n', '<leader>9', '9gt')
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"cpp", "h"}, 
-	callback = function()
-	vim.keymap.set('n', '<leader>c', ':e %<.cpp<CR>')
-	vim.keymap.set('n', '<leader>C', ':vnew %<.cpp<CR>')
-	vim.keymap.set('n', '<leader>h', ':e %<.h<CR>')
-	vim.keymap.set('n', '<leader>H', ':vnew %<.h<CR>')
-	vim.keymap.set('n', '<leader>b', ':e %:p:h/CMakeLists.txt<CR>')
-	end
-	})
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"go", "dart"}, 
-	callback = function()
-	vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
-	end
-	})
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"dart"}, 
-	callback = function()
-	vim.keymap.set('n', '<F4>', ':CocCommand flutter.devices<CR>')
-	vim.keymap.set('n', '<F5>', ':CocCommand flutter.dev.hotReload<CR>')
-	vim.keymap.set('n', '<F6>', ':CocCommand flutter.dev.openDevLog<CR>')
-	vim.keymap.set('n', '<F7>', ':CocCommand flutter.run<CR>')
-	vim.keymap.set('n', '<F8>', ':CocCommand flutter.dev.quit<CR>')
-	end
-	})

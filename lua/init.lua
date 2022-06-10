@@ -12,7 +12,9 @@ vim.o.hidden = true
 vim.o.errorbells = false
 vim.o.wrap = false
 vim.o.swapfile = false
+vim.o.incsearch = true
 vim.o.hlsearch = false
+vim.o.smartcase = true
 vim.o.scrolloff = 8
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.colorcolumn = 80
@@ -25,6 +27,7 @@ set guifont=Fira\ Code:h14
 ]])
 
 require('plugins')
+require('shortcuts')
 require('navigation')
 require('style')
 require('lsp')

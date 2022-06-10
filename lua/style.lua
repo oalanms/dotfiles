@@ -1,6 +1,8 @@
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.cursorline = true
+vim.o.cursorcolumn = true
+vim.o.colorcolumn = 80
 vim.o.mouse = true
 
 vim.cmd('colorscheme codedark')
@@ -16,8 +18,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "c", "h", "hpp"}, 
 	callback = function()
-	vim.o.shiftwidth = 2
-	vim.o.tabstop = 2
+	vim.o.shiftwidth = 4
+	vim.o.tabstop = 4
 	end
 	})
 

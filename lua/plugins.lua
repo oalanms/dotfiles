@@ -1,36 +1,42 @@
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function()
+	-- PACKER.NVIM
 	use 'wbthomason/packer.nvim'
 
+	-- GIT
 	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
-	use 'tpope/vim-eunuch'
+
+	-- TOOLS
 	use 'mbbill/undotree'
-	use 'octol/vim-cpp-enhanced-highlight'
-	use {'neoclide/coc.nvim', run = 'yarn install'}
+	use 'tpope/vim-eunuch'
 	use 'vim-scripts/DoxygenToolkit.vim'
 	use 'scrooloose/nerdtree'
 	use 'tpope/vim-vinegar'
 	use 'jremmen/vim-ripgrep'
-
-	use 'tommcdo/vim-exchange'
-	use 'tpope/vim-surround'
-	use 'SirVer/ultisnips'
 	use 'luochen1990/rainbow'
-	use 'junegunn/fzf'
-	use 'junegunn/fzf.vim'
+	use 'sbdchd/neoformat'
+	use 'farmergreg/vim-lastplace'
 	use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
 	}
-
 	use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-	use 'sbdchd/neoformat'
+	-- C++
+	use 'octol/vim-cpp-enhanced-highlight'
+
+	-- AUTO-COMPLETE
+	use {'neoclide/coc.nvim', run = 'yarn install'}
+	
+	-- EDIT
+	use 'tommcdo/vim-exchange'
+	use 'tpope/vim-surround'
+	use 'SirVer/ultisnips'
 
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
