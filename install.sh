@@ -3,22 +3,20 @@
 HOME="/home/alan"
 NVIM_HOME="$HOME/.config/nvim"
 NVIM_LUA_HOME="$NVIM_HOME/lua"
-TMUX_CONF_HOME="$HOME"
 
 # Install programs
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-sudo apt install -y nodejs python3.9 pip fzf ripgrep
-
-sudo npm install -g yarn prettier
-
-python3.9 -m pip install neovim
+# curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+# sudo apt install -y nodejs python3.9 pip fzf ripgrep
+# 
+# sudo npm install -g yarn prettier
+# 
+# python3.9 -m pip install neovim
 
 # Setup NEOVIM
 mkdir -p $NVIM_LUA_HOME
-cp init.vim $NVIM_HOME
+cp .tmux.conf .zshrc .personal $HOME
+cp init.vim coc-settings.json $NVIM_HOME
 cp lua/* $NVIM_LUA_HOME
-cp .tmux.conf $TMUX_CONF_HOME
-cp coc-settings.json $NVIM_HOME
 
 # Install packer
 PACKER_INSTALL_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"

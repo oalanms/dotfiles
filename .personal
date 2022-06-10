@@ -1,0 +1,12 @@
+alias gs='git status' 
+alias gd='git diff'
+alias gc='git commit -m'
+alias gca='git commit -am'
+alias gcan='git commit --amend --no-edit'
+alias gco='git checkout'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gpl='git pull'
+alias gps='git push'
+alias gpo='git push origin'
+
