@@ -7,6 +7,10 @@ vim.o.mouse = true
 
 vim.cmd('colorscheme codedark')
 
+vim.cmd([[
+highlight WinSeparator guibg=None
+]])
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"py", "dart", "lua", "go"}, 
 	callback = function()

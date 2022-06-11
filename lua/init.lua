@@ -25,10 +25,6 @@ vim.o.mouse = 'a'
 vim.o.laststatus = 3
 
 vim.cmd([[
-highlight WinSeparator guibg=None
-]])
-
-vim.cmd([[
 set guifont=Essential\ PragmataPro:h14
 ]])
 
