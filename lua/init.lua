@@ -24,7 +24,8 @@ vim.o.shortmess = 'c'
 vim.o.mouse = 'a'
 
 vim.cmd([[
-set guifont=Fira\ Code:h14
+" set guifont=Fira\ Code:h14
+set guifont=Essential\ PragmataPro:h14
 ]])
 
 require('plugins')
