@@ -29,7 +29,6 @@ highlight WinSeparator guibg=None
 ]])
 
 vim.cmd([[
-" set guifont=Fira\ Code:h14
 set guifont=Essential\ PragmataPro:h14
 ]])
 
