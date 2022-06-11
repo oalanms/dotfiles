@@ -22,6 +22,7 @@ vim.o.signcolumn = 'yes'
 vim.o.cmdheight = 2
 vim.o.shortmess = 'c'
 vim.o.mouse = 'a'
+vim.o.laststatus = 3
 
 vim.cmd([[
 " set guifont=Fira\ Code:h14
