@@ -17,6 +17,7 @@ mkdir -p $NVIM_LUA_HOME
 cp .tmux.conf .zshrc .personal $HOME
 cp init.vim coc-settings.json $NVIM_HOME
 cp lua/* $NVIM_LUA_HOME
+cp -R snippets $NVIM_HOME
 
 # Install packer
 PACKER_INSTALL_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
