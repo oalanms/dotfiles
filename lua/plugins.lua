@@ -36,7 +36,8 @@ require('packer').startup(function()
 	-- EDIT
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
-	use 'SirVer/ultisnips'
+	-- use 'SirVer/ultisnips'
+	use 'dcampos/nvim-snippy'
 
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
@@ -78,4 +79,17 @@ require('lualine').setup ({
   },
   tabline = {},
   extensions = {}
+})
+
+
+require('snippy').setup({
+    mappings = {
+        is = {
+            ['<Tab>'] = 'expand_or_advance',
+            ['<S-Tab>'] = 'previous',
+        },
+        nx = {
+            ['<leader>x'] = 'cut_text',
+        },
+    },
 })
