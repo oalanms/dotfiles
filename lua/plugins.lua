@@ -82,13 +82,12 @@ require('lualine').setup ({
 })
 
 vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<CR>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 require('snippy').setup({
     mappings = {
         is = {
-            ['<Tab>'] = 'expand_or_advance',
-            ['<S-Tab>'] = 'previous',
+            ['<leader>s'] = 'expand_or_advance',
         },
         nx = {
             ['<leader>x'] = 'cut_text',
