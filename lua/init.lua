@@ -35,3 +35,4 @@ require('style')
 require('lsp')
 
 vim.keymap.set('n', '<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
+vim.keymap.set('n', '<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')
