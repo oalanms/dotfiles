@@ -22,3 +22,4 @@ export NVM_DIR="$HOME/.config/nvm"
 alias nvui="/home/alan/programs/nvui/bin/nvui --ext_multigrid --ext_cmdline"
 
 export PATH="$PATH:/home/alan/Android/Sdk/platform-tools"
+export PATH="$PATH:/home/alan/apps"
