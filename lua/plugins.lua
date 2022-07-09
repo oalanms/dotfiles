@@ -88,7 +88,7 @@ require('lualine').setup ({
 require('snippy').setup({
     mappings = {
         is = {
-            ['<leader>s'] = 'expand_or_advance',
+            ['<leader><Tab>'] = 'expand_or_advance',
         },
         nx = {
             ['<leader>x'] = 'cut_text',

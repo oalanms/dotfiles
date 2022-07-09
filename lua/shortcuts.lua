@@ -14,3 +14,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	vim.keymap.set('n', '<leader>b', ':e %:p:h/CMakeLists.txt<CR>')
 	end
 	})
+
+vim.keymap.set('n', '<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
+vim.keymap.set('n', '<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')

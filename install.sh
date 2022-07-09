@@ -2,13 +2,13 @@
 
 HOME="/home/alan"
 
-# Install programs
-# curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-# sudo apt install -y nodejs python3.9 pip fzf ripgrep
-# 
-# sudo npm install -g yarn prettier
-# 
-# python3.9 -m pip install neovim
+Install programs
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt install -y nodejs pip fzf ripgrep
+
+sudo npm install -g yarn prettier
+
+python3 -m pip install neovim
 
 cp .tmux.conf .zshrc .personal $HOME
 sh install_vim.sh
