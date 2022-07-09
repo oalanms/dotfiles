@@ -1,6 +1,9 @@
 vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
 vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>')
 
+vim.keymap.set('n', '<leader>s', ':mks! .session.vim<CR>')
+vim.keymap.set('n', '<leader>S', ':so .session.vim<CR>')
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "h"}, 
 	callback = function()
