@@ -1,4 +1,5 @@
 vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
+vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>')
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "h"}, 
