@@ -1,27 +1,27 @@
--- local on_attach = function(client, bufnr)
---   -- Enable completion triggered by <c-x><c-o>
---   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
--- 
---   vim.keymap.set('n', 'i', 'i<C-x><C-o>', opts)
---   vim.keymap.set('i', '.', '.<C-x><C-o>', opts)
---   vim.keymap.set('i', '::', '.<C-x><C-o>', opts)
---   vim.keymap.set('i', '->', '.<C-x><C-o>', opts)
--- 
---   local opts = { noremap=true, silent=true }
---   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
---   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
---   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
---   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
---   vim.keymap.set('n', 'gR', vim.lsp.buf.rename, opts)
---   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
---   vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, opts)
---   vim.keymap.set('v', 'ga', vim.lsp.buf.range_code_action, opts)
---   vim.keymap.set('n', '<leader><leader>', vim.lsp.buf.formatting, opts)
---   vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
---   vim.keymap.set('n', 'gn', vim.diagnostic.goto_prev, opts)
---   vim.keymap.set('n', 'gp', vim.diagnostic.goto_next, opts)
---   vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, opts)
--- end
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  vim.keymap.set('n', 'i', 'i<C-x><C-o>', opts)
+  vim.keymap.set('i', '.', '.<C-x><C-o>', opts)
+  vim.keymap.set('i', '::', '.<C-x><C-o>', opts)
+  vim.keymap.set('i', '->', '.<C-x><C-o>', opts)
+
+  local opts = { noremap=true, silent=true }
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+  vim.keymap.set('n', 'gR', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('v', 'ga', vim.lsp.buf.range_code_action, opts)
+  vim.keymap.set('n', '<leader><leader>', vim.lsp.buf.formatting, opts)
+  vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', 'gn', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', 'gp', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, opts)
+end
 -- 
 -- require'lspconfig'.dartls.setup{
 --   on_attach = on_attach,
@@ -31,9 +31,9 @@
 --   on_attach = on_attach,
 -- }
 -- 
--- require'lspconfig'.rust_analyzer.setup{
---   on_attach = on_attach,
--- }
+require'lspconfig'.rust_analyzer.setup{
+  on_attach = on_attach,
+}
 
 vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
 vim.keymap.set('n', 'gD', '<Plug>(coc-declaration)')
