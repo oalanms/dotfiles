@@ -30,10 +30,34 @@ vim.keymap.set('n', '<leader>F', function()
 		require('telescope.builtin').find_files({hidden=true})
 end)
 
+vim.keymap.set('n', '<leader>c', function()
+		require('telescope.builtin').commands({})
+end)
+
 vim.keymap.set('n', '<leader>g', function()
 		require('telescope.builtin').live_grep()
 end)
-                               
+
+vim.keymap.set('v', '<leader>g', function()
+		require('telescope.builtin').live_grep()
+end)
+
+vim.keymap.set('n', '<leader>r', function()
+		require('telescope.builtin').lsp_references()
+end)
+
+vim.keymap.set('n', '<leader>s', function()
+		require('telescope.builtin').lsp_workspace_symbols()
+end)
+
+vim.keymap.set('n', '<leader>D', function()
+		require('telescope.builtin').lsp_definitions()
+end)
+
+vim.keymap.set('n', '<leader>t', function()
+		require('telescope.builtin').lsp_type_definitions()
+end)
+
 -- vim.keymap.set('n', '<leader>g', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_commands.json}" <C-r>"<CR>')
 -- vim.keymap.set('n', '<leader>G', 'y:Rg -j1 --glob "!{**/cmake.bld/**,compile_commands.json}" ""<Left>')
 

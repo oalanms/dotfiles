@@ -32,6 +32,7 @@ require('packer').startup(function()
 
 	-- AUTO-COMPLETE
 	use {'neoclide/coc.nvim', run = 'yarn install'}
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	
 	-- EDIT
 	use 'tommcdo/vim-exchange'
@@ -63,7 +64,7 @@ require('lualine').setup ({
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics', 'g:coc_status'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'filesize', 'encoding', 'filetype'},
     lualine_y = {'progress'},
