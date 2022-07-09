@@ -1,8 +1,6 @@
 #!/bin/bash
 
 HOME="/home/alan"
-NVIM_HOME="$HOME/.config/nvim"
-NVIM_LUA_HOME="$NVIM_HOME/lua"
 
 # Install programs
 # curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -12,21 +10,18 @@ NVIM_LUA_HOME="$NVIM_HOME/lua"
 # 
 # python3.9 -m pip install neovim
 
-# Setup NEOVIM
-mkdir -p $NVIM_LUA_HOME
 cp .tmux.conf .zshrc .personal $HOME
-cp init.vim coc-settings.json $NVIM_HOME
-cp lua/* $NVIM_LUA_HOME
-cp -R snippets $NVIM_HOME
+sh install_vim.sh
+
+# Install nvm
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+# Setup node
+nvm install 16.15
+nvm use 16.15
+npm instlal -g yarn
 
 # Install packer
-PACKER_INSTALL_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-COPILOT_INSTALL_DIR="$HOME/.config/nvim/pack/github/start/copilot.vim"
 TMUX_PLUGIN_MANAGER_INSTALL_DIR="$HOME/.tmux/plugins/tpm"
 
-[[ ! -d $PACKER_INSTALL_DIR ]] && git clone --depth 1 https://github.com/wbthomason/packer.nvim $PACKER_INSTALL_DIR
-[[ ! -d $COPILOT_INSTALL_DIR ]] && git clone https://github.com/github/copilot.vim.git $COPILOT_INSTALL_DIR
 [[ ! -d $TMUX_PLUGIN_MANAGER_INSTALL_DIR ]] && git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_MANAGER_INSTALL_DIR
-
-nvim -c "PackerSync" -c "qa"
-nvim -c "CocInstall coc-clangd coc-flutter coc-lua coc-go coc-prettier" -c "qa"
