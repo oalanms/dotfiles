@@ -3,9 +3,10 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   vim.keymap.set('n', 'i', 'i<C-x><C-o>', opts)
+  vim.keymap.set('n', 'a', 'a<C-x><C-o>', opts)
   vim.keymap.set('i', '.', '.<C-x><C-o>', opts)
-  vim.keymap.set('i', '::', '.<C-x><C-o>', opts)
-  vim.keymap.set('i', '->', '.<C-x><C-o>', opts)
+--  vim.keymap.set('i', '::', '.<C-x><C-o>', opts)
+--  vim.keymap.set('i', '->', '.<C-x><C-o>', opts)
 
   local opts = { noremap=true, silent=true }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
