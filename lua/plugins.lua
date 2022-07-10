@@ -32,13 +32,11 @@ require('packer').startup(function()
 	use 'octol/vim-cpp-enhanced-highlight'
 
 	-- AUTO-COMPLETE
-	-- use {'neoclide/coc.nvim', run = 'yarn install'}
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	
 	-- EDIT
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
-	-- use 'SirVer/ultisnips'
 	--use 'dcampos/nvim-snippy'
 
 	-- COLORSCHEMES
