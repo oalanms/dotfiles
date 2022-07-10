@@ -52,9 +52,9 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"dart"}, 
 	callback = function()
 	vim.keymap.set('n', '<F4>', ':CocCommand flutter.devices<CR>')
-	vim.keymap.set('n', '<F5>', ':CocCommand flutter.dev.hotReload<CR>')
+	vim.keymap.set('n', '<F5>', ':CocCommand flutter.run<CR>')
 	vim.keymap.set('n', '<F6>', ':CocCommand flutter.dev.openDevLog<CR>')
-	vim.keymap.set('n', '<F7>', ':CocCommand flutter.run<CR>')
+	vim.keymap.set('n', '<F7>', ':CocCommand flutter.dev.hotRestart<CR>')
 	vim.keymap.set('n', '<F8>', ':CocCommand flutter.dev.quit<CR>')
 	end
 	})
