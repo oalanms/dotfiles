@@ -18,6 +18,7 @@ require('packer').startup(function()
 	use 'luochen1990/rainbow'
 	use 'sbdchd/neoformat'
 	use 'farmergreg/vim-lastplace'
+  use 'thosakwe/vim-flutter'
 	use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
@@ -31,7 +32,7 @@ require('packer').startup(function()
 	use 'octol/vim-cpp-enhanced-highlight'
 
 	-- AUTO-COMPLETE
-	use {'neoclide/coc.nvim', run = 'yarn install'}
+	-- use {'neoclide/coc.nvim', run = 'yarn install'}
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	
 	-- EDIT
