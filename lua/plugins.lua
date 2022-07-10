@@ -47,6 +47,7 @@ require('packer').startup(function()
 	}
 
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'hrsh7th/nvim-cmp'
 end
 )
 
