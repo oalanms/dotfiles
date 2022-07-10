@@ -1,8 +1,8 @@
 -- vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
 
+vim.g.mapleader = ','
 vim.o.undodir=os.getenv("HOME").."/.config/nvim/undo"
 vim.o.undofile = true
-vim.g.mapleader = ','
 vim.o.syntax = true
 
 vim.o.wildignore = '**/cmake.bld/**,compile_commands.json'
@@ -21,12 +21,6 @@ vim.o.colorcolumn = 80
 vim.o.signcolumn = 'yes'
 vim.o.cmdheight = 1
 vim.o.shortmess = 'c'
-vim.o.mouse = 'a'
--- vim.o.laststatus = 3
-
--- vim.cmd([[
--- set guifont=Essential\ PragmataPro:h14
--- ]])
 
 require('plugins')
 require('shortcuts')

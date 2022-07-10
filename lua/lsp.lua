@@ -2,12 +2,6 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  vim.keymap.set('n', 'i', 'i<C-x><C-o>', opts)
-  vim.keymap.set('n', 'a', 'a<C-x><C-o>', opts)
-  vim.keymap.set('i', '.', '.<C-x><C-o>', opts)
---  vim.keymap.set('i', '::', '.<C-x><C-o>', opts)
---  vim.keymap.set('i', '->', '.<C-x><C-o>', opts)
-
   local opts = { noremap=true, silent=true }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -24,10 +18,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, opts)
 end
 
-require'lspconfig'.dartls.setup{
-  on_attach = on_attach,
-}
-
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
 }
@@ -36,6 +26,23 @@ require'lspconfig'.rust_analyzer.setup{
   on_attach = on_attach,
 }
 
+-- Flutter
+require'lspconfig'.dartls.setup{
+  on_attach = on_attach,
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {"dart"}, 
+	callback = function()
+	vim.keymap.set('n', '<F4>', ':FlutterDevices<CR>')
+	vim.keymap.set('n', '<F5>', ':FlutterRun<CR>')
+	vim.keymap.set('n', '<F6>', ':FlutterVSplit<CR>')
+	vim.keymap.set('n', '<F7>', ':FlutterHotRestart<CR>')
+	vim.keymap.set('n', '<F8>', ':FlutterQuit<CR>')
+	end
+	})
+
+-- Old coc.nvim stuff
 -- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
 -- vim.keymap.set('n', 'gD', '<Plug>(coc-declaration)')
 -- vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)')
@@ -59,13 +66,3 @@ require'lspconfig'.rust_analyzer.setup{
 -- 	end
 -- 	})
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"dart"}, 
-	callback = function()
-	vim.keymap.set('n', '<F4>', ':FlutterDevices<CR>')
-	vim.keymap.set('n', '<F5>', ':FlutterRun<CR>')
-	vim.keymap.set('n', '<F6>', ':FlutterVSplit<CR>')
-	vim.keymap.set('n', '<F7>', ':FlutterHotRestart<CR>')
-	vim.keymap.set('n', '<F8>', ':FlutterQuit<CR>')
-	end
-	})
