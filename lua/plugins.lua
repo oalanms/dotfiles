@@ -39,7 +39,7 @@ require('packer').startup(function()
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
 	-- use 'SirVer/ultisnips'
-	use 'dcampos/nvim-snippy'
+	--use 'dcampos/nvim-snippy'
 
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
@@ -86,13 +86,13 @@ require('lualine').setup ({
 -- vim.g.copilot_no_tab_map = true
 -- vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
-require('snippy').setup({
-    mappings = {
-        is = {
-            ['<leader><Tab>'] = 'expand_or_advance',
-        },
-        nx = {
-            ['<leader>x'] = 'cut_text',
-        },
-    },
-})
+-- require('snippy').setup({
+--     mappings = {
+--         is = {
+--             ['<leader><Tab>'] = 'expand_or_advance',
+--         },
+--         nx = {
+--             ['<leader>x'] = 'cut_text',
+--         },
+--     },
+-- })
