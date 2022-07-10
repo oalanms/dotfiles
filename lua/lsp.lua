@@ -44,6 +44,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	end
 	})
 
+local cmp = require('cmp')
+cmp.setup({
+})
+
 -- Old coc.nvim stuff
 -- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
 -- vim.keymap.set('n', 'gD', '<Plug>(coc-declaration)')
