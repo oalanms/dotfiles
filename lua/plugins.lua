@@ -19,10 +19,10 @@ require('packer').startup(function()
 	use 'sbdchd/neoformat'
 	use 'farmergreg/vim-lastplace'
   use 'thosakwe/vim-flutter'
-	-- use {
-	--   'nvim-treesitter/nvim-treesitter',
-	--   run = ':TSUpdate'
-	-- }
+	use {
+	  'nvim-treesitter/nvim-treesitter',
+	  run = ':TSUpdate'
+	}
 	use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
