@@ -46,10 +46,6 @@ vim.keymap.set('n', '<leader>r', function()
 		require('telescope.builtin').lsp_references()
 end)
 
-vim.keymap.set('n', '<leader>s', function()
-		require('telescope.builtin').lsp_workspace_symbols()
-end)
-
 vim.keymap.set('n', '<leader>D', function()
 		require('telescope.builtin').lsp_definitions()
 end)
