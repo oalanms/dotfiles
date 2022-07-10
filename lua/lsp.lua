@@ -1,6 +1,7 @@
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.cmd("set completeopt=menu,menuone,noselect")
 
   local opts = { noremap=true, silent=true }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -11,6 +12,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, opts)
   vim.keymap.set('v', 'ga', vim.lsp.buf.range_code_action, opts)
+
   -- vim.keymap.set('n', '<leader><leader>', vim.lsp.buf.formatting, opts)
   vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, opts)
