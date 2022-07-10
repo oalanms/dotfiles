@@ -30,33 +30,18 @@ vim.keymap.set('n', '<leader>7', '7gt')
 vim.keymap.set('n', '<leader>8', '8gt')
 vim.keymap.set('n', '<leader>9', '9gt')
                                
--- Call telescope find files
+local telescope = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>f', function()
-		require('telescope.builtin').find_files({hidden=false})
+		telescope.find_files({hidden=false})
 end)
 
--- Call telescope find files
 vim.keymap.set('n', '<leader>F', function()
-		require('telescope.builtin').find_files({hidden=true})
+		telescope.find_files({hidden=true})
 end)
 
-vim.keymap.set('n', '<leader>C', function()
-		require('telescope.builtin').commands({})
-end)
-
-vim.keymap.set('n', '<leader>g', function()
-		require('telescope.builtin').live_grep()
-end)
-
-vim.keymap.set('n', '<leader>r', function()
-		require('telescope.builtin').lsp_references()
-end)
-
-vim.keymap.set('n', '<leader>D', function()
-		require('telescope.builtin').lsp_definitions()
-end)
-
-vim.keymap.set('n', '<leader>T', function()
-		require('telescope.builtin').lsp_type_definitions()
-end)
-
+vim.keymap.set('n', '<leader>C', ':Telescope commands<CR>')
+vim.keymap.set('n', '<leader>C', ':Telescope live_grep<CR>')
+vim.keymap.set('n', '<leader>r', ':Telescope lsp_references<CR>')
+vim.keymap.set('n', '<leader>D', ':Telescope lsp_definitions<CR>')
+vim.keymap.set('n', '<leader>T', ':Telescope lsp_type_definitions<CR>')
