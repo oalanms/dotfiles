@@ -25,14 +25,14 @@ vim.api.nvim_create_autocmd("FileType", {
 	end
 	})
 
--- require('nvim-treesitter.configs').setup {
---   -- A list of parser names, or "all"
---   ensure_installed = { "c", "cpp", "lua", "go", "dart" },
---   highlight = {
---     enable = true,
---     additional_vim_regex_highlighting = true,
---   },
--- }
+require('nvim-treesitter.configs').setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "cpp", "lua", "go", "dart" },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = true,
+  },
+}
 
 vim.cmd([[
 let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'highlight': 'Comment' } }

@@ -44,11 +44,11 @@ vim.keymap.set('n', '<leader>C', function()
 		require('telescope.builtin').commands({})
 end)
 
-vim.keymap.set('n', '<leader>G', function()
+vim.keymap.set('n', '<leader>g', function()
 		require('telescope.builtin').live_grep()
 end)
 
-vim.keymap.set('n', '<leader>R', function()
+vim.keymap.set('n', '<leader>r', function()
 		require('telescope.builtin').lsp_references()
 end)
 
