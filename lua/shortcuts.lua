@@ -1,5 +1,5 @@
--- vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
--- vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>')
+vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>')
+vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>')
 
 vim.keymap.set('n', '<leader>s', ':mks! .session.vim<CR>')
 vim.keymap.set('n', '<leader>S', ':so .session.vim<CR>')
