@@ -20,19 +20,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, opts)
 end
 
-require'lspconfig'.gopls.setup{
-  on_attach = on_attach,
-}
-
-require'lspconfig'.rust_analyzer.setup{
-  on_attach = on_attach,
-}
-
--- Flutter
-require'lspconfig'.dartls.setup{
-  on_attach = on_attach,
-}
-
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"dart"}, 
 	callback = function()
@@ -48,14 +35,28 @@ local cmp = require('cmp')
 cmp.setup({
   sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
     })
 })
+
+ -- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+require'lspconfig'.gopls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require'lspconfig'.rust_analyzer.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require'lspconfig'.dartls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 -- Old coc.nvim stuff
 -- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
