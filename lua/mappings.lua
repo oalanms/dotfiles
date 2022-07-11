@@ -50,8 +50,8 @@ vim.keymap.set('n', '<leader>7', '7gt', no_remap_silent)
 vim.keymap.set('n', '<leader>8', '8gt', no_remap_silent)
 vim.keymap.set('n', '<leader>9', '9gt', no_remap_silent)
 
-vim.keymap.set('n', '<leader>gh', ':GitGutterNextHunk<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>gH', ':GitGutterPrevHunk<CR>', no_remap_silent)
+vim.keymap.set('n', 'gh', ':GitGutterNextHunk<CR>', no_remap_silent)
+vim.keymap.set('n', 'gH', ':GitGutterPrevHunk<CR>', no_remap_silent)
                                
 local telescope = require('telescope.builtin')
 
