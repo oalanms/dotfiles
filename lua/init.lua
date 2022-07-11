@@ -1,4 +1,3 @@
-require('globals')
 require('sets')
 require('plugins')
 require('mappings')

@@ -1,4 +1,5 @@
-local on_attach = function(client, bufnr)
+local no_remap_silent = { noremap=true, silent=true }
+local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   vim.cmd("set completeopt=menu,menuone,noselect")
   local keymap = vim.keymap;
