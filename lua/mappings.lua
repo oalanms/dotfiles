@@ -64,7 +64,8 @@ vim.keymap.set('n', '<leader>F', function()
 end, no_remap_silent)
 
 vim.keymap.set('n', '<leader>g', ':Telescope live_grep<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>gr', ':Telescope lsp_references<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>gc', ':Telescope commands<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>gd', ':Telescope lsp_definitions<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>gt', ':Telescope lsp_type_definitions<CR>', no_remap_silent)
+
+vim.keymap.set('n', '<localleader>r', ':Telescope lsp_references<CR>', no_remap_silent)
+vim.keymap.set('n', '<localleader>c', ':Telescope commands<CR>', no_remap_silent)
+vim.keymap.set('n', '<localleader>d', ':Telescope lsp_definitions<CR>', no_remap_silent)
+vim.keymap.set('n', '<localleader>t', ':Telescope lsp_type_definitions<CR>', no_remap_silent)

@@ -1,4 +1,5 @@
 vim.g.mapleader = ','
+vim.g.maplocaleader = ' '
 
 vim.o.undodir=os.getenv("HOME").."/.config/nvim/undo"
 vim.o.undofile = true
