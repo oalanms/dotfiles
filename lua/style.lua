@@ -30,8 +30,3 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = true,
   },
 }
-
--- vim.cmd([[
--- let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'highlight': 'Comment' } }
--- ]])
--- 

@@ -1,9 +1,9 @@
 require('globals')
-require('general')
+require('sets')
 require('plugins')
 require('mappings')
 require('navigation')
 require('style')
 require('lsp')
+require('autocommands')
 require('snippets')
-

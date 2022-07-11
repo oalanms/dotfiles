@@ -1,32 +1,23 @@
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   vim.cmd("set completeopt=menu,menuone,noselect")
+  local keymap = vim.keymap;
+  local buf = vim.lsp.buf;
 
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, no_remap_silent)
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, no_remap_silent)
-  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, no_remap_silent)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, no_remap_silent)
-  vim.keymap.set('n', 'gR', vim.lsp.buf.rename, no_remap_silent)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, no_remap_silent)
-  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, no_remap_silent)
-  vim.keymap.set('v', 'ga', vim.lsp.buf.range_code_action, no_remap_silent)
+  keymap.set('n', 'gd', buf.definition, no_remap_silent)
+  keymap.set('n', 'gD', buf.declaration, no_remap_silent)
+  keymap.set('n', 'gt', buf.type_definition, no_remap_silent)
+  keymap.set('n', 'gr', buf.references, no_remap_silent)
+  keymap.set('n', 'gR', buf.rename, no_remap_silent)
+  keymap.set('n', 'gi', buf.implementation, no_remap_silent)
+  keymap.set('n', 'ga', buf.code_action, no_remap_silent)
+  keymap.set('v', 'ga', buf.range_code_action, no_remap_silent)
 
-  vim.keymap.set('n', 'ge', vim.diagnostic.open_float, no_remap_silent)
-  vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, no_remap_silent)
-  vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, no_remap_silent)
-  vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist, no_remap_silent)
+  keymap.set('n', 'ge', vim.diagnostic.open_float, no_remap_silent)
+  keymap.set('n', 'gn', vim.diagnostic.goto_next, no_remap_silent)
+  keymap.set('n', 'gp', vim.diagnostic.goto_prev, no_remap_silent)
+  keymap.set('n', '<leader>d', vim.diagnostic.setloclist, no_remap_silent)
 end
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"dart"}, 
-	callback = function()
-	vim.keymap.set('n', '<F4>', ':FlutterDevices<CR>')
-	vim.keymap.set('n', '<F5>', ':FlutterRun<CR>')
-	vim.keymap.set('n', '<F6>', ':FlutterVSplit<CR>')
-	vim.keymap.set('n', '<F7>', ':FlutterHotRestart<CR>')
-	vim.keymap.set('n', '<F8>', ':FlutterQuit<CR>')
-	end
-	})
 
 local cmp = require('cmp')
 cmp.setup({
@@ -45,22 +36,23 @@ cmp.setup({
  -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'.gopls.setup{
+local lspconfig = require('lspconfig')
+lspconfig.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
-require'lspconfig'.rust_analyzer.setup{
+lspconfig.rust_analyzer.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
-require'lspconfig'.dartls.setup{
+lspconfig.dartls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
-require'lspconfig'.clangd.setup{
+lspconfig.clangd.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = {
