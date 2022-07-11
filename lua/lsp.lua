@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
   keymap.set('n', 'gR', buf.rename, no_remap_silent)
   keymap.set('n', 'gi', buf.implementation, no_remap_silent)
   keymap.set('n', 'ga', buf.code_action, no_remap_silent)
+  keymap.set('n', 'gk', buf.hover, no_remap_silent)
   keymap.set('v', 'ga', buf.range_code_action, no_remap_silent)
 
   keymap.set('n', 'ge', vim.diagnostic.open_float, no_remap_silent)
