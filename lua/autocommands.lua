@@ -15,3 +15,11 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup
 	})
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = {"*"}, 
+	callback = function()
+	vim.cmd('GitGutter')
+	end,
+  group = augroup
+	})
+
