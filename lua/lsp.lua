@@ -65,6 +65,11 @@ require'lspconfig'.dartls.setup{
   capabilities = capabilities,
 }
 
+require'lspconfig'.clangd.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 -- Old coc.nvim stuff
 -- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)')
 -- vim.keymap.set('n', 'gD', '<Plug>(coc-declaration)')
