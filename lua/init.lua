@@ -6,4 +6,5 @@ require('shortcuts')
 require('navigation')
 require('style')
 require('lsp')
+require('snippets')
 

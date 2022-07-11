@@ -38,6 +38,7 @@ require('packer').startup(function()
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
 	--use 'dcampos/nvim-snippy'
+  use 'L3MON4D3/LuaSnip'
 
 	-- COLORSCHEMES
 	use 'tomasiser/vim-code-dark'
