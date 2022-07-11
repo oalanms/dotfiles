@@ -41,6 +41,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
 
 	-- STYLE
+  use 'kshenoy/vim-signature'
 	use 'tomasiser/vim-code-dark'
 	use {
     'nvim-lualine/lualine.nvim',
