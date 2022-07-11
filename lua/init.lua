@@ -1,8 +1,7 @@
--- vim.env.FZF_DEFAULT_OPTS = '--layout=reverse'
-
+require('globals')
 require('general')
 require('plugins')
-require('shortcuts')
+require('mappings')
 require('navigation')
 require('style')
 require('lsp')

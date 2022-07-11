@@ -7,15 +7,14 @@ require('packer').startup(function()
 	-- GIT
 	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 	-- TOOLS
 	use 'mbbill/undotree'
 	use 'tpope/vim-eunuch'
 	use 'vim-scripts/DoxygenToolkit.vim'
-	use 'scrooloose/nerdtree'
 	use 'tpope/vim-vinegar'
 	use 'jremmen/vim-ripgrep'
-	use 'luochen1990/rainbow'
 	use 'sbdchd/neoformat'
 	use 'farmergreg/vim-lastplace'
   use 'thosakwe/vim-flutter'
@@ -23,33 +22,30 @@ require('packer').startup(function()
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
 	}
+
+  -- NAVIGATION
+	use 'scrooloose/nerdtree'
 	use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-	-- C++
-	use 'octol/vim-cpp-enhanced-highlight'
-
 	-- AUTO-COMPLETE
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'neovim/nvim-lspconfig'
 	
 	-- EDIT
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
-	--use 'dcampos/nvim-snippy'
   use 'L3MON4D3/LuaSnip'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
 
-	-- COLORSCHEMES
+	-- STYLE
 	use 'tomasiser/vim-code-dark'
 	use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-
-	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
 end
 )
 
@@ -83,17 +79,3 @@ require('lualine').setup ({
   tabline = {},
   extensions = {}
 })
-
--- vim.g.copilot_no_tab_map = true
--- vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
--- require('snippy').setup({
---     mappings = {
---         is = {
---             ['<leader><Tab>'] = 'expand_or_advance',
---         },
---         nx = {
---             ['<leader>x'] = 'cut_text',
---         },
---     },
--- })

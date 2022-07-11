@@ -11,11 +11,9 @@ vim.cmd([[
 highlight WinSeparator guibg=None
 ]])
 
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
 vim.o.expandtab = true
-vim.o.smartindent = true
-vim.o.autoindent = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "c", "h", "hpp"}, 
@@ -26,7 +24,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	})
 
 require('nvim-treesitter.configs').setup {
-  -- A list of parser names, or "all"
   ensure_installed = { "c", "cpp", "lua", "go", "dart" },
   highlight = {
     enable = true,
@@ -34,7 +31,7 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-vim.cmd([[
-let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'highlight': 'Comment' } }
-]])
-
+-- vim.cmd([[
+-- let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6, 'highlight': 'Comment' } }
+-- ]])
+-- 
