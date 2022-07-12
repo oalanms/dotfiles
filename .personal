@@ -9,4 +9,4 @@ alias gba='git branch -a'
 alias gpl='git pull'
 alias gps='git push'
 alias gpo='git push origin'
-
+alias bbcmk='bbcmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
