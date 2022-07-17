@@ -5,3 +5,6 @@ require('style')
 require('lsp')
 require('autocommands')
 require('snippets')
+
+vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>', no_remap_silent)
+vim.keymap.set('n', 'zS', ':so .session.vim<CR>', no_remap_silent)
