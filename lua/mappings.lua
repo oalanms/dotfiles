@@ -68,5 +68,5 @@ vim.keymap.set('n', '<localleader>c', ':Telescope commands<CR>', no_remap_silent
 vim.keymap.set('n', '<localleader>d', ':Telescope lsp_definitions<CR>', no_remap_silent)
 vim.keymap.set('n', '<localleader>t', ':Telescope lsp_type_definitions<CR>', no_remap_silent)
 
-vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>', no_remap_silent)
-vim.keymap.set('n', 'zS', ':so .session.vim<CR>', no_remap_silent)
+vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>')
+vim.keymap.set('n', 'zS', ':so .session.vim<CR>')
