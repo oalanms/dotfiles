@@ -2,8 +2,8 @@ local no_remap_silent = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
 vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
 
-vim.keymap.set('n', '<leader>s', ':mks! .session.vim<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>S', ':so .session.vim<CR>', no_remap_silent)
+vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>', no_remap_silent)
+vim.keymap.set('n', 'zS', ':so .session.vim<CR>', no_remap_silent)
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "h"}, 
