@@ -1,3 +1,6 @@
+vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>', no_remap_silent)
+vim.keymap.set('n', 'zS', ':so .session.vim<CR>', no_remap_silent)
+
 local no_remap_silent = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
 vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
@@ -67,6 +70,3 @@ vim.keymap.set('n', '<localleader>r', ':Telescope lsp_references<CR>', no_remap_
 vim.keymap.set('n', '<localleader>c', ':Telescope commands<CR>', no_remap_silent)
 vim.keymap.set('n', '<localleader>d', ':Telescope lsp_definitions<CR>', no_remap_silent)
 vim.keymap.set('n', '<localleader>t', ':Telescope lsp_type_definitions<CR>', no_remap_silent)
-
-vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>', no_remap_silent)
-vim.keymap.set('n', 'zS', ':so .session.vim<CR>', no_remap_silent)
