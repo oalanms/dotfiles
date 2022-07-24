@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	})
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = {"*"}, 
+	pattern = {"*"},
 	callback = function()
 	vim.cmd('GitGutter')
 	end,

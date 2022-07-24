@@ -32,7 +32,7 @@ require('packer').startup(function()
 
 	-- AUTO-COMPLETE
   use 'neovim/nvim-lspconfig'
-	
+
 	-- EDIT
 	use 'tommcdo/vim-exchange'
 	use 'tpope/vim-surround'
