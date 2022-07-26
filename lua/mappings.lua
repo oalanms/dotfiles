@@ -1,73 +1,77 @@
+local telescope = require('telescope.builtin')
 local no_remap_silent = { noremap=true, silent=true }
-vim.keymap.set('n', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
-vim.keymap.set('v', '<leader><leader>', ':Neoformat<CR>', no_remap_silent)
+
+function set_map(mode, lhs, rhs)
+  vim.keymap.set(mode, lhs, rhs, no_remap_silent)
+end
+
+function nmap(lhs, rhs)
+  set_map('n', lhs, rhs)
+end
+
+function vmap(lhs, rhs)
+  set_map('v', lhs, rhs)
+end
+
+nmap('<leader><leader>', ':Neoformat<CR>')
+vmap('<leader><leader>', ':Neoformat<CR>')
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"cpp", "h"}, 
 	callback = function()
-	vim.keymap.set('n', '<leader>c', ':e %<.cpp<CR>', no_remap_silent)
-	vim.keymap.set('n', '<leader>C', ':vnew %<.cpp<CR>', no_remap_silent)
-	vim.keymap.set('n', '<leader>h', ':e %<.h<CR>', no_remap_silent)
-	vim.keymap.set('n', '<leader>H', ':vnew %<.h<CR>', no_remap_silent)
-	vim.keymap.set('n', '<leader>b', ':vnew %:p:h/CMakeLists.txt<CR>', no_remap_silent)
+	nmap('<leader>c', ':e %<.cpp<CR>')
+	nmap('<leader>C', ':vnew %<.cpp<CR>')
+	nmap('<leader>h', ':e %<.h<CR>')
+	nmap('<leader>H', ':vnew %<.h<CR>')
+	nmap('<leader>b', ':vnew %:p:h/CMakeLists.txt<CR>')
 	end
 	})
 
-vim.keymap.set('n', '<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
-vim.keymap.set('n', '<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')
+nmap('<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
+nmap('<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')
 
-vim.o.splitright = true
-vim.o.splitbelow = true
+nmap('<C-h>', '<C-w>h')
+nmap('<C-j>', '<C-w>j')
+nmap('<C-k>', '<C-w>k')
+nmap('<C-l>', '<C-w>l')
 
-vim.keymap.set('n', '<C-h>', '<C-w>h', no_remap_silent)
-vim.keymap.set('n', '<C-j>', '<C-w>j', no_remap_silent)
-vim.keymap.set('n', '<C-k>', '<C-w>k', no_remap_silent)
-vim.keymap.set('n', '<C-l>', '<C-w>l', no_remap_silent)
+nmap('<C-M-h>', '3<C-w><')
+nmap('<C-M-l>', '3<C-w>>')
+nmap('<C-M-k>', '1<C-w>-')
+nmap('<C-M-j>', '1<C-w>+')
 
-vim.keymap.set('n', '<C-M-h>', '3<C-w><', no_remap_silent)
-vim.keymap.set('n', '<C-M-l>', '3<C-w>>', no_remap_silent)
-vim.keymap.set('n', '<C-M-k>', '1<C-w>-', no_remap_silent)
-vim.keymap.set('n', '<C-M-j>', '1<C-w>+', no_remap_silent)
+nmap('<leader>M', '<C-w>_<C-w><Bar> ')
+nmap('<leader>m', '<C-w>=')
 
-vim.keymap.set('n', '<leader>M', '<C-w>_<C-w><Bar> ', no_remap_silent)
-vim.keymap.set('n', '<leader>m', '<C-w>=', no_remap_silent)
+nmap('<leader>t', ':tabnew<CR>')
+nmap('<leader>n', ':new<CR>')
+nmap('<leader>v', ':vnew<CR>')
+nmap('<leader>q', ':q<CR>')
+nmap('<leader>Q', ':q!<CR>')
 
-vim.keymap.set('n', '<leader>t', ':tabnew<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>n', ':new<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>v', ':vnew<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>q', ':q<CR>', no_remap_silent)
-vim.keymap.set('n', '<leader>Q', ':q!<CR>', no_remap_silent)
+nmap('<leader>1', '1gt')
+nmap('<leader>2', '2gt')
+nmap('<leader>3', '3gt')
+nmap('<leader>4', '4gt')
+nmap('<leader>5', '5gt')
+nmap('<leader>6', '6gt')
+nmap('<leader>7', '7gt')
+nmap('<leader>8', '8gt')
+nmap('<leader>9', '9gt')
 
-vim.keymap.set('n', '<leader>1', '1gt', no_remap_silent)
-vim.keymap.set('n', '<leader>2', '2gt', no_remap_silent)
-vim.keymap.set('n', '<leader>3', '3gt', no_remap_silent)
-vim.keymap.set('n', '<leader>4', '4gt', no_remap_silent)
-vim.keymap.set('n', '<leader>5', '5gt', no_remap_silent)
-vim.keymap.set('n', '<leader>6', '6gt', no_remap_silent)
-vim.keymap.set('n', '<leader>7', '7gt', no_remap_silent)
-vim.keymap.set('n', '<leader>8', '8gt', no_remap_silent)
-vim.keymap.set('n', '<leader>9', '9gt', no_remap_silent)
-
-vim.keymap.set('n', 'gh', ':GitGutterNextHunk<CR>', no_remap_silent)
-vim.keymap.set('n', 'gH', ':GitGutterPrevHunk<CR>', no_remap_silent)
+nmap('gh', ':GitGutterNextHunk<CR>')
+nmap('gH', ':GitGutterPrevHunk<CR>')
                                
-local telescope = require('telescope.builtin')
+nmap('<leader>f', function() telescope.find_files({hidden=false}) end)
+nmap('<leader>F', function() telescope.find_files({hidden=true}) end)
 
-vim.keymap.set('n', '<leader>f', function()
-		telescope.find_files({hidden=false})
-end, no_remap_silent)
+nmap('<leader>g', ':Telescope live_grep<CR>')
 
-vim.keymap.set('n', '<leader>F', function()
-		telescope.find_files({hidden=true})
-end, no_remap_silent)
+nmap('<localleader>r', ':Telescope lsp_references<CR>')
+nmap('<localleader>c', ':Telescope commands<CR>')
+nmap('<localleader>d', ':Telescope lsp_definitions<CR>')
+nmap('<localleader>t', ':Telescope lsp_type_definitions<CR>')
+nmap('<localleader>/', ':noh<CR>')
 
-vim.keymap.set('n', '<leader>g', ':Telescope live_grep<CR>', no_remap_silent)
-
-vim.keymap.set('n', '<localleader>r', ':Telescope lsp_references<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>c', ':Telescope commands<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>d', ':Telescope lsp_definitions<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>t', ':Telescope lsp_type_definitions<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>/', ':noh<CR>', no_remap_silent)
-
-vim.keymap.set('n', 'zs', ':mks! .session.vim<CR>')
-vim.keymap.set('n', 'zS', ':so .session.vim<CR>')
+nmap('zs', ':mks! .session.vim<CR>')
+nmap('zS', ':so .session.vim<CR>')

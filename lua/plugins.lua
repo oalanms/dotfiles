@@ -32,13 +32,13 @@ require('packer').startup(function()
 
   -- AUTO-COMPLETE
   use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
 
   -- EDIT
   use 'tommcdo/vim-exchange'
   use 'tpope/vim-surround'
   use 'L3MON4D3/LuaSnip'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
 
   -- STYLE
   use 'kshenoy/vim-signature'

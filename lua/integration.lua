@@ -37,4 +37,5 @@ function stop_jobs()
   for _, job in ipairs(jobs) do
     vim.fn.jobstop(job)
   end
+  jobs = {}
 end

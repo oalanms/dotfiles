@@ -24,3 +24,5 @@ vim.o.signcolumn = 'yes'
 vim.o.smartindent = true
 vim.o.swapfile = false
 vim.o.wrap = false
+vim.o.splitright = true
+vim.o.splitbelow = true
