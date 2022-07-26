@@ -17,7 +17,7 @@ function append_to_buffer(data)
 end
 
 function run_make_job(target)
-  vim.api.nvim_buf_set_lines(bufnumber, 0, -1, false, {"make ", target})
+  vim.api.nvim_buf_set_lines(bufnumber, 0, -1, false, {"make " .. target})
   job = vim.fn.jobstart({"make", target}, {
     stdout_buffered = true,
     on_exit = function(_, rc)
