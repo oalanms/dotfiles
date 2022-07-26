@@ -20,7 +20,7 @@ function run_make_job(target)
       append_to_quickfix({"Finished with rc=" .. tostring(rc)})
     end,
     on_stdout = function(_, data)
-      -- append_to_quickfix(data)
+      append_to_quickfix(data)
     end,
     on_stderr = function(_, data)
       append_to_quickfix(data)
