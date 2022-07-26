@@ -1,58 +1,58 @@
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function()
-	-- PACKER.NVIM
-	use 'wbthomason/packer.nvim'
+  -- PACKER.NVIM
+  use 'wbthomason/packer.nvim'
 
-	-- GIT
-	use 'airblade/vim-gitgutter'
-	use 'tpope/vim-fugitive'
-	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- GIT
+  use 'airblade/vim-gitgutter'
+  use 'tpope/vim-fugitive'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-	-- TOOLS
-	use 'mbbill/undotree'
-	use 'tpope/vim-eunuch'
-	use 'vim-scripts/DoxygenToolkit.vim'
-	use 'tpope/vim-vinegar'
-	use 'jremmen/vim-ripgrep'
-	use 'sbdchd/neoformat'
-	use 'farmergreg/vim-lastplace'
+  -- TOOLS
+  use 'mbbill/undotree'
+  use 'tpope/vim-eunuch'
+  use 'vim-scripts/DoxygenToolkit.vim'
+  use 'tpope/vim-vinegar'
+  use 'jremmen/vim-ripgrep'
+  use 'sbdchd/neoformat'
+  use 'farmergreg/vim-lastplace'
   use 'thosakwe/vim-flutter'
-	use {
-	  'nvim-treesitter/nvim-treesitter',
-	  run = ':TSUpdate'
-	}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
   -- NAVIGATION
-	use 'scrooloose/nerdtree'
-	use {
+  use 'scrooloose/nerdtree'
+  use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-	-- AUTO-COMPLETE
+  -- AUTO-COMPLETE
   use 'neovim/nvim-lspconfig'
 
-	-- EDIT
-	use 'tommcdo/vim-exchange'
-	use 'tpope/vim-surround'
+  -- EDIT
+  use 'tommcdo/vim-exchange'
+  use 'tpope/vim-surround'
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
 
-	-- STYLE
+  -- STYLE
   use 'kshenoy/vim-signature'
-	use 'tomasiser/vim-code-dark'
-	use {
+  use 'tomasiser/vim-code-dark'
+  use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+  }
 end
 )
 
 vim.keymap.set('n', '<bslash><bslash>', ':NERDTreeToggle<CR>')
 require('lualine').setup ({
-	options = {
+  options = {
     icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
