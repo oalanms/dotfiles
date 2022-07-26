@@ -1,20 +1,15 @@
 local jobs = {}
 
-vim.keymap.set('n', '<localleader>jb', ':lua run_make_job("build")<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>jr', ':lua run_make_job("run")<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>jt', ':lua run_make_job("test")<CR>', no_remap_silent)
-vim.keymap.set('n', '<localleader>jq', ':lua stop_jobs()<CR>', no_remap_silent)
-
-function append_to_quickfix(data)
+local function append_to_quickfix(data)
   for _, line in ipairs(data) do
     vim.cmd("cadde " .. "\"" .. line .. "\"")
   end
 end
 
-function run_make_job(target)
+local function run_make_job(target)
   vim.cmd("cexpr []")
   append_to_quickfix({"make " .. target})
-  job = vim.fn.jobstart({"make", target}, {
+  jobs[#jobs+1] = vim.fn.jobstart({"make", target}, {
     stdout_buffered = true,
     on_exit = function(_, rc)
       append_to_quickfix({"Finished with rc=" .. tostring(rc)})
@@ -26,12 +21,17 @@ function run_make_job(target)
       append_to_quickfix(data)
     end
   })
-  jobs[#jobs+1] = job
 end
 
-function stop_jobs()
+local function stop_jobs()
   for _, job in ipairs(jobs) do
     vim.fn.jobstop(job)
   end
   jobs = {}
 end
+
+local nmap = require('utils').nmap
+nmap('<localleader>jb', function() run_make_job("build") end)
+nmap('<localleader>jr', function() run_make_job("run") end)
+nmap('<localleader>jt', function() run_make_job("test") end)
+nmap('<localleader>jq', function() stop_jobs() end)

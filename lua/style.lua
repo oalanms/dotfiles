@@ -12,11 +12,11 @@ highlight WinSeparator guibg=None
 ]])
 
 vim.o.expandtab = true
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"cpp", "c", "h", "hpp"},
+	pattern = {"dart"},
 	callback = function()
 	vim.o.shiftwidth = 4
 	vim.o.tabstop = 4

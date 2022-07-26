@@ -17,11 +17,13 @@ require('packer').startup(function()
   use 'jremmen/vim-ripgrep'
   use 'sbdchd/neoformat'
   use 'farmergreg/vim-lastplace'
-  use 'thosakwe/vim-flutter'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
+  -- FLUTTER
+  use 'thosakwe/vim-flutter'
 
   -- NAVIGATION
   use 'scrooloose/nerdtree'
@@ -50,7 +52,6 @@ require('packer').startup(function()
 end
 )
 
-vim.keymap.set('n', '<bslash><bslash>', ':NERDTreeToggle<CR>')
 require('lualine').setup ({
   options = {
     icons_enabled = true,

@@ -1,24 +1,24 @@
-local no_remap_silent = { noremap=true, silent=true }
+local nmap = require('utils').nmap
+
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   vim.cmd("set completeopt=menu,menuone,noselect")
-  local keymap = vim.keymap;
   local buf = vim.lsp.buf;
 
-  keymap.set('n', 'gd', buf.definition, no_remap_silent)
-  keymap.set('n', 'gD', buf.declaration, no_remap_silent)
-  keymap.set('n', 'gt', buf.type_definition, no_remap_silent)
-  keymap.set('n', 'gr', buf.references, no_remap_silent)
-  keymap.set('n', 'gR', buf.rename, no_remap_silent)
-  keymap.set('n', 'gi', buf.implementation, no_remap_silent)
-  keymap.set('n', 'ga', buf.code_action, no_remap_silent)
-  keymap.set('n', 'gk', buf.hover, no_remap_silent)
-  keymap.set('v', 'ga', buf.range_code_action, no_remap_silent)
+  nmap('gd', buf.definition)
+  nmap('gD', buf.declaration)
+  nmap('gt', buf.type_definition)
+  nmap('gr', buf.references)
+  nmap('gR', buf.rename)
+  nmap('gi', buf.implementation)
+  nmap('ga', buf.code_action)
+  nmap('gk', buf.hover)
+  nmap('ga', buf.range_code_action)
 
-  keymap.set('n', 'ge', vim.diagnostic.open_float, no_remap_silent)
-  keymap.set('n', 'gn', vim.diagnostic.goto_next, no_remap_silent)
-  keymap.set('n', 'gp', vim.diagnostic.goto_prev, no_remap_silent)
-  keymap.set('n', '<leader>d', vim.diagnostic.setloclist, no_remap_silent)
+  nmap('ge', vim.diagnostic.open_float)
+  nmap('gn', vim.diagnostic.goto_next)
+  nmap('gp', vim.diagnostic.goto_prev)
+  nmap('<leader>d', vim.diagnostic.setloclist)
 end
 
 local cmp = require('cmp')
@@ -35,10 +35,10 @@ cmp.setup({
   }),
 })
 
- -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lspconfig = require('lspconfig')
+
 lspconfig.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
@@ -58,13 +58,12 @@ lspconfig.sumneko_lua.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
+    -- Get the language server to recognize the `vim` global
     Lua = {
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
         globals = {'vim'},
       },
       workspace = {
-        -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
       },
       telemetry = {

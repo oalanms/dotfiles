@@ -1,31 +1,10 @@
-local telescope = require('telescope.builtin')
-local noremap = { noremap=true }
+local utils = require('utils')
 
-function set_map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, noremap)
-end
-
-function nmap(lhs, rhs)
-  set_map('n', lhs, rhs)
-end
-
-function vmap(lhs, rhs)
-  set_map('v', lhs, rhs)
-end
+local nmap = utils.nmap
+local vmap = utils.vmap
 
 nmap('<leader><leader>', ':Neoformat<CR>')
 vmap('<leader><leader>', ':Neoformat<CR>')
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"cpp", "h"}, 
-	callback = function()
-	nmap('<leader>c', ':e %<.cpp<CR>')
-	nmap('<leader>C', ':vnew %<.cpp<CR>')
-	nmap('<leader>h', ':e %<.h<CR>')
-	nmap('<leader>H', ':vnew %<.h<CR>')
-	nmap('<leader>b', ':vnew %:p:h/CMakeLists.txt<CR>')
-	end
-	})
 
 nmap('<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
 nmap('<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')
@@ -61,7 +40,9 @@ nmap('<leader>9', '9gt')
 
 nmap('gh', ':GitGutterNextHunk<CR>')
 nmap('gH', ':GitGutterPrevHunk<CR>')
-                               
+
+local telescope = require('telescope.builtin')
+
 nmap('<leader>f', function() telescope.find_files({hidden=false}) end)
 nmap('<leader>F', function() telescope.find_files({hidden=true}) end)
 
@@ -73,5 +54,6 @@ nmap('<localleader>d', ':Telescope lsp_definitions<CR>')
 nmap('<localleader>t', ':Telescope lsp_type_definitions<CR>')
 nmap('<localleader>/', ':noh<CR>')
 
-nmap('zs', ':mks! .session.vim<CR>')
-nmap('zS', ':so .session.vim<CR>')
+nmap('zS', ':mks! .session.vim<CR>')
+nmap('zs', ':so .session.vim<CR>')
+nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')

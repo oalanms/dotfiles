@@ -20,3 +20,15 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = augroup
 	})
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {"cpp", "h"},
+	callback = function()
+	nmap('<leader>c', ':e %<.cpp<CR>')
+	nmap('<leader>C', ':vnew %<.cpp<CR>')
+	nmap('<leader>h', ':e %<.h<CR>')
+	nmap('<leader>H', ':vnew %<.h<CR>')
+	nmap('<leader>b', ':vnew %:p:h/CMakeLists.txt<CR>')
+	end,
+  group = augroup
+	})
+
