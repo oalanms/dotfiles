@@ -1,4 +1,5 @@
 local augroup = vim.api.nvim_create_augroup("augroup", { clear = true })
+local nmap = require("utils").nmap
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"dart"}, 
