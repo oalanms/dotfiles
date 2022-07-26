@@ -1,5 +1,5 @@
-require('sets')
 require('utils')
+require('sets')
 require('plugins')
 require('mappings')
 require('style')
