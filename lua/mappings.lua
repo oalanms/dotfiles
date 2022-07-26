@@ -1,8 +1,8 @@
 local telescope = require('telescope.builtin')
-local no_remap_silent = { noremap=true, silent=true }
+local noremap = { noremap=true }
 
 function set_map(mode, lhs, rhs)
-  vim.keymap.set(mode, lhs, rhs, no_remap_silent)
+  vim.keymap.set(mode, lhs, rhs, noremap)
 end
 
 function nmap(lhs, rhs)
