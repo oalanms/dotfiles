@@ -53,8 +53,9 @@ nmap('<localleader>c', ':Telescope commands<CR>')
 nmap('<localleader>d', ':Telescope lsp_definitions<CR>')
 nmap('<localleader>t', ':Telescope lsp_type_definitions<CR>')
 nmap('<localleader>/', ':noh<CR>')
+nmap('<localleader>u', ':UndotreeShow<CR>:UndotreeFocus<CR>')
+nmap('<localleader>U', ':UndotreeHide<CR>')
 
 nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
-

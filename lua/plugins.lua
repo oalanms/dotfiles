@@ -6,7 +6,6 @@ require('packer').startup(function()
 
   -- GIT
   use 'airblade/vim-gitgutter'
-  use 'tpope/vim-fugitive'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- TOOLS
@@ -71,12 +70,12 @@ require('lualine').setup ({
     lualine_z = {'location'}
   },
   inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
+    lualine_x = {'filesize', 'encoding', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
   },
   tabline = {},
   extensions = {}
