@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = {"*"},
     callback = function()
         local quickfix_bufnr = utils.get_quickfix_bufnr()
-        vim.api.nvim_buf_call(quickfix_bufnr, function() vim.cmd([[$]]) end)
+        vim.api.nvim_buf_call(quickfix_bufnr, function() vim.cmd([[G]]) end)
     end,
     group = augroup
 })
