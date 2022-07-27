@@ -1,11 +1,11 @@
 local jobs = {}
 
-local function append_to_quickfix(data)
+local function append_to_quickfix(data, title)
   local lines = {}
   vim.list_extend(lines, data)
 
   vim.fn.setqflist({}, "a", {
-      title = "Make",
+      title = title or "Make",
       lines = lines,
   })
 end
@@ -20,7 +20,7 @@ local function run_make_job(target)
     on_exit = function(_, rc)
       local end_message = "Finished with rc=" .. tostring(rc)
       print(end_message)
-      append_to_quickfix({end_message})
+      append_to_quickfix({end_message}, "Make (rc=" .. tostring(rc) .. ")")
     end,
     on_stdout = function(_, data)
       append_to_quickfix(data)
