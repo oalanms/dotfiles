@@ -15,8 +15,6 @@ local function run_make_job(target)
   append_to_quickfix({"make " .. target})
 
   jobs[#jobs+1] = vim.fn.jobstart({"make", target}, {
-    stdout_buffered = true,
-    stderr_buffered = true,
     on_exit = function(_, rc)
       append_to_quickfix({"Finished with rc=" .. tostring(rc)})
     end,
