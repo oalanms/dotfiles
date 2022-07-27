@@ -8,6 +8,7 @@ local function append_to_quickfix(data, title)
       title = title or "Make",
       lines = lines,
   })
+  vim.cmd([[doautocmd QuickFixCmdPost]])
 end
 
 local function run_make(target)
@@ -16,14 +17,14 @@ local function run_make(target)
   local begin_message = "make " .. target
 
   -- Print the command being executed
-  print(begin_message)
+  -- print(begin_message)
   append_to_quickfix({begin_message})
 
   -- Create a job that runs the command
   jobs[#jobs+1] = vim.fn.jobstart({"make", target}, {
     on_exit = function(_, rc)
       local end_message = "Finished with rc=" .. tostring(rc)
-      print(end_message)
+      -- print(end_message)
       append_to_quickfix({end_message}, "Make (rc=" .. tostring(rc) .. ")")
     end,
     on_stdout = function(_, data)

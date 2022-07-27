@@ -33,3 +33,11 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup
 	})
 
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+	pattern = {"*"},
+	callback = function()
+        vim.cmd([[$]])
+	end,
+  group = augroup
+	})
+
