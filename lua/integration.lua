@@ -8,6 +8,7 @@ local function append_to_quickfix(data, title)
         title = title or "Make",
         lines = lines,
     })
+    vim.cmd([[doautocmd QuickFixCmdPost]])
 end
 
 local function run_make(target)
