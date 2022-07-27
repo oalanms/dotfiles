@@ -12,11 +12,15 @@ end
 
 local function run_make_job(target)
   vim.fn.setqflist({}, 'r')
-  append_to_quickfix({"make " .. target})
+  local begin_message = "make " .. target
+  print(begin_message)
+  append_to_quickfix({begin_message})
 
   jobs[#jobs+1] = vim.fn.jobstart({"make", target}, {
     on_exit = function(_, rc)
-      append_to_quickfix({"Finished with rc=" .. tostring(rc)})
+      local end_message = "Finished with rc=" .. tostring(rc)
+      print(end_message)
+      append_to_quickfix({end_message})
     end,
     on_stdout = function(_, data)
       append_to_quickfix(data)
