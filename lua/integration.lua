@@ -1,16 +1,22 @@
 local jobs = {}
 
 local function append_to_quickfix(data)
-  for _, line in ipairs(data) do
-    vim.cmd("cadde " .. "\"" .. line .. "\"")
-  end
+  local lines = {}
+  vim.list_extend(lines, data)
+
+  vim.fn.setqflist({}, "a", {
+      title = "Make",
+      lines = lines,
+  })
 end
 
 local function run_make_job(target)
-  vim.cmd("cexpr []")
+  vim.fn.setqflist({}, 'r')
   append_to_quickfix({"make " .. target})
+
   jobs[#jobs+1] = vim.fn.jobstart({"make", target}, {
     stdout_buffered = true,
+    stderr_buffered = true,
     on_exit = function(_, rc)
       append_to_quickfix({"Finished with rc=" .. tostring(rc)})
     end,
@@ -35,3 +41,5 @@ nmap('<localleader>jb', function() run_make_job("build") end)
 nmap('<localleader>jr', function() run_make_job("run") end)
 nmap('<localleader>jt', function() run_make_job("test") end)
 nmap('<localleader>jq', function() stop_jobs() end)
+
+nmap('<localleader>q', ':copen<CR>')

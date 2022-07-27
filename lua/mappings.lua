@@ -57,3 +57,4 @@ nmap('<localleader>/', ':noh<CR>')
 nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
+
