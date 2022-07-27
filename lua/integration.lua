@@ -45,4 +45,4 @@ nmap('<localleader>jt', function() run_make_job("test") end)
 nmap('<localleader>jq', function() stop_jobs() end)
 
 nmap('<localleader>q', ':copen<CR>')
-nmap('<localleader>Q', ':cc<CR>')
+nmap('<localleader>Q', ':cclose<CR>')
