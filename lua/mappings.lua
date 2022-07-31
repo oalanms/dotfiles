@@ -46,16 +46,17 @@ local telescope = require('telescope.builtin')
 nmap('<leader>f', function() telescope.find_files({hidden=false}) end)
 nmap('<leader>F', function() telescope.find_files({hidden=true}) end)
 
-nmap('<leader>g', ':Telescope live_grep<CR>')
-
-nmap('<localleader>r', ':Telescope lsp_references<CR>')
-nmap('<localleader>c', ':Telescope commands<CR>')
-nmap('<localleader>d', ':Telescope lsp_definitions<CR>')
-nmap('<localleader>t', ':Telescope lsp_type_definitions<CR>')
+nmap('<leader>g', telescope.live_grep)
+nmap('<localleader>r', telescope.lsp_references)
+nmap('<localleader>c', telescope.commands)
+nmap('<localleader>d', telescope.lsp_definitions)
+nmap('<localleader>t', telescope.lsp_type_definitions)
 nmap('<localleader>/', ':noh<CR>')
 nmap('<localleader>u', ':UndotreeShow<CR>:UndotreeFocus<CR>')
 nmap('<localleader>U', ':UndotreeHide<CR>')
 
+-- Store / Restore a session.
 nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
+
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')

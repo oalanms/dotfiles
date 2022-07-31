@@ -2,8 +2,9 @@ local augroup = vim.api.nvim_create_augroup("augroup", { clear = true })
 local utils = require('utils')
 local nmap = utils.nmap
 
+-- Flutter build / run shortcuts
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"dart"}, 
+    pattern = {"dart"},
     callback = function()
         vim.keymap.set('n', '<F4>', ':FlutterDevices<CR>')
         vim.keymap.set('n', '<F5>', ':FlutterRun<CR>')
@@ -14,6 +15,7 @@ vim.api.nvim_create_autocmd("FileType", {
     group = augroup
 })
 
+-- Update git gutter on save
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = {"*"},
     callback = function()
@@ -22,6 +24,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     group = augroup
 })
 
+-- Jump between .h/.cpp and go to local CMakeLists.txt
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"cpp", "h"},
     callback = function()
@@ -34,6 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
     group = augroup
 })
 
+-- Auto-scroll quickfix
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = {"*"},
     callback = function()
