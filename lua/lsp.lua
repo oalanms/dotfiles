@@ -16,7 +16,7 @@ local on_attach = function(_, bufnr)
   nmap('gk', buf.hover)
   nmap('ga', buf.range_code_action)
 
-  imap('<C-k>', buf.signature_help);
+  imap('<C-k>', buf.hover);
 
   nmap('ge', vim.diagnostic.open_float)
   nmap('gn', vim.diagnostic.goto_next)
