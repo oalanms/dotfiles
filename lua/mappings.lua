@@ -62,4 +62,4 @@ nmap('zs', ':so .session.vim<CR>')
 
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
 
-imap('.', '<C-x><C-o>')
+imap('.', '.<C-x><C-o>')
