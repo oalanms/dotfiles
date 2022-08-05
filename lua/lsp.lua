@@ -2,7 +2,7 @@ local nmap = require('utils').nmap
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  vim.cmd("set completeopt=menu,menuone,noselect")
+  -- vim.cmd("set completeopt=menu,menuone,noselect")
   local buf = vim.lsp.buf;
 
   nmap('gd', buf.definition)
