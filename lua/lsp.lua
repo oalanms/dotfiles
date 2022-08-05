@@ -1,4 +1,5 @@
 local nmap = require('utils').nmap
+local imap = require('utils').imap
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -14,6 +15,8 @@ local on_attach = function(_, bufnr)
   nmap('ga', buf.code_action)
   nmap('gk', buf.hover)
   nmap('ga', buf.range_code_action)
+
+  imap('<C-k>', buf.signature_help);
 
   nmap('ge', vim.diagnostic.open_float)
   nmap('gn', vim.diagnostic.goto_next)
