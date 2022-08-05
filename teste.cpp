@@ -5,8 +5,8 @@ class Calculator {
 };
 
 int main(){
-
     Calculator calc;
+
     int a = 1, b = 2;
     int result = calc.sum(a, b);
     int result2 = calc.sub("a", "b");
