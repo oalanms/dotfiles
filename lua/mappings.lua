@@ -2,6 +2,7 @@ local utils = require('utils')
 
 local nmap = utils.nmap
 local vmap = utils.vmap
+local imap = utils.imap
 
 nmap('<leader><leader>', ':Neoformat<CR>')
 vmap('<leader><leader>', ':Neoformat<CR>')
@@ -60,3 +61,5 @@ nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
 
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
+
+imap('.', '<C-x><C-o>')
