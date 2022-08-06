@@ -26,15 +26,10 @@ end
 
 local cmp = require('cmp')
 
--- TODO: Copied from README.md of nvim-cmp. What can I remove?
 cmp.setup({
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
     window = {
@@ -51,16 +46,12 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
     }, {
         { name = 'buffer' },
     })
 })
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local lspconfig = require('lspconfig')
 
