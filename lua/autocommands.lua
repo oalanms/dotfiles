@@ -47,18 +47,3 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     group = augroup
 })
 
--- Colorschemes
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = { "*" },
-    callback = function()
-        vim.cmd([[
-        highlight WinSeparator guibg=None
-        highlight Normal ctermbg=NONE guibg=NONE
-        ]])
-    end,
-    group = augroup
-})
-
-vim.cmd([[
-highlight WinSeparator guibg=None
-]])

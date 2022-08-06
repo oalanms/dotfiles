@@ -26,3 +26,5 @@ vim.o.swapfile = false
 vim.o.wrap = false
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.opt.updatetime = 50
+vim.opt.shortmess:append("c")
