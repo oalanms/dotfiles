@@ -64,14 +64,6 @@ require('lualine').setup({
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },
-    inactive_sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename', 'filedir' },
-        lualine_x = { 'filesize', 'encoding', 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
-    },
     tabline = {},
     extensions = {}
 })
