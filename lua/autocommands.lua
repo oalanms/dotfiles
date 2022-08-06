@@ -4,7 +4,7 @@ local nmap = utils.nmap
 
 -- Flutter build / run shortcuts
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"dart"},
+    pattern = { "dart" },
     callback = function()
         vim.keymap.set('n', '<F4>', ':FlutterDevices<CR>')
         vim.keymap.set('n', '<F5>', ':FlutterRun<CR>')
@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Update git gutter on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = {"*"},
+    pattern = { "*" },
     callback = function()
         vim.cmd('GitGutter')
     end,
@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 -- Jump between .h/.cpp and go to local CMakeLists.txt
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"cpp", "h"},
+    pattern = { "cpp", "h" },
     callback = function()
         nmap('<leader>c', ':e %<.cpp<CR>')
         nmap('<leader>C', ':vnew %<.cpp<CR>')
@@ -39,11 +39,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Auto-scroll quickfix
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-    pattern = {"*"},
+    pattern = { "*" },
     callback = function()
         local quickfix_bufnr = utils.get_quickfix_bufnr()
         vim.api.nvim_buf_call(quickfix_bufnr, function() vim.cmd([[normal G]]) end)
     end,
     group = augroup
 })
-

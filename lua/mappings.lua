@@ -39,8 +39,8 @@ nmap('gH', ':GitGutterPrevHunk<CR>')
 
 local telescope = require('telescope.builtin')
 
-nmap('<leader>f', function() telescope.find_files({hidden=false}) end)
-nmap('<leader>F', function() telescope.find_files({hidden=true}) end)
+nmap('<leader>f', function() telescope.find_files({ hidden = false }) end)
+nmap('<leader>F', function() telescope.find_files({ hidden = true }) end)
 
 nmap('<leader>g', telescope.live_grep)
 nmap('<localleader>r', telescope.lsp_references)
