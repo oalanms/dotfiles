@@ -21,10 +21,10 @@ require('packer').startup(function()
     run = ':TSUpdate'
   }
 
-  use {
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu',
-  }
+  -- use {
+  --     'weilbith/nvim-code-action-menu',
+  --     cmd = 'CodeActionMenu',
+  -- }
 
   -- FLUTTER
   use 'thosakwe/vim-flutter'

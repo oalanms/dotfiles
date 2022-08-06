@@ -12,9 +12,8 @@ local on_attach = function(_, bufnr)
   nmap('gr', buf.references)
   nmap('gR', buf.rename)
   nmap('gi', buf.implementation)
-  nmap('ga', ':CodeActionMenu<CR>')
+  nmap('ga', buf.code_action)
   nmap('gk', buf.hover)
-  -- nmap('ga', buf.range_code_action)
 
   imap('<C-k>', buf.hover);
 
