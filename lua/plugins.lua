@@ -33,8 +33,8 @@ require('packer').startup(function()
 
   -- AUTO-COMPLETE
   use 'neovim/nvim-lspconfig'
-  -- use 'hrsh7th/nvim-cmp'
-  -- use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
 
   -- EDIT
   use 'tommcdo/vim-exchange'

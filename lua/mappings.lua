@@ -56,10 +56,10 @@ nmap('<localleader>/', ':noh<CR>')
 nmap('<localleader>u', ':UndotreeShow<CR>:UndotreeFocus<CR>')
 nmap('<localleader>U', ':UndotreeHide<CR>')
 
--- Store / Restore a session.
+-- Save / Restore a session.
 nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
 
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
 
-imap('.', '.<C-x><C-o>')
+-- imap('.', '.<C-x><C-o>')
