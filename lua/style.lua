@@ -5,11 +5,11 @@ vim.o.cursorcolumn = true
 vim.o.colorcolumn = 80
 vim.o.mouse = true
 
-vim.cmd('colorscheme codedark')
+-- vim.cmd('colorscheme codedark')
 
 vim.cmd([[
 highlight WinSeparator guibg=None
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE guifg=NONE ctermfg=NONE
 ]])
 
 vim.o.expandtab = true
