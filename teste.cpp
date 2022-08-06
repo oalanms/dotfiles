@@ -10,5 +10,7 @@ int main() {
   int a = 1, b = 2;
   int result = calc.sum(a, b);
 
+  int k = calc.sub(1, 2);
+
   return 0;
 }
