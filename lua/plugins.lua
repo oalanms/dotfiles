@@ -57,7 +57,7 @@ require('lualine').setup({
         globalstatus = false,
     },
     sections = {
-        lualine_a = { 'mode' },
+        lualine_a = { 'mode', 'require("lsp-status").status()'},
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
         lualine_x = { 'filesize', 'encoding', 'filetype' },
