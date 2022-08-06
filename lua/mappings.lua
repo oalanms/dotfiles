@@ -1,11 +1,6 @@
 local utils = require('utils')
 
 local nmap = utils.nmap
-local vmap = utils.vmap
-local imap = utils.imap
-
-nmap('<leader><leader>', ':Neoformat<CR>')
-vmap('<leader><leader>', ':Neoformat<CR>')
 
 nmap('<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
 nmap('<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')

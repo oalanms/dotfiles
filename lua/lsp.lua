@@ -14,6 +14,7 @@ local on_attach = function(_, bufnr)
   nmap('gi', buf.implementation)
   nmap('ga', buf.code_action)
   nmap('gk', buf.hover)
+  nmap('<leader><leader>', buf.formatting_sync)
 
   imap('<C-k>', buf.hover);
 

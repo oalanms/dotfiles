@@ -5,12 +5,10 @@ class Calculator {
 };
 
 int main(){
-    Calculator calc;
+        Calculator calc;
 
     int a = 1, b = 2;
     int result = calc.sum(a, b);
-
-    int k = calc.sub(a, b);
 
     return 0;
 }
