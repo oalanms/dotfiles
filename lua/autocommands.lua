@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 })
 
 -- Colorschemes
-vim.api.nvim_create_autocmd("ColorScheme", {
+vim.api.nvim_create_autocmd("BufEnter", {
     pattern = { "*" },
     callback = function()
         vim.cmd([[
