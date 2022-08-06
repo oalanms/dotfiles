@@ -10,9 +10,8 @@ require('packer').startup(function()
 
   -- TOOLS
   use 'mbbill/undotree'
-  use 'tpope/vim-eunuch'
+  use 'tpope/vim-eunuch' -- Rename, Move, CFind, Move
   use 'vim-scripts/DoxygenToolkit.vim'
-  use 'tpope/vim-vinegar'
   use 'jremmen/vim-ripgrep'
   use 'sbdchd/neoformat'
   use 'farmergreg/vim-lastplace'
@@ -20,11 +19,6 @@ require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-
-  -- use {
-  --     'weilbith/nvim-code-action-menu',
-  --     cmd = 'CodeActionMenu',
-  -- }
 
   -- FLUTTER
   use 'thosakwe/vim-flutter'
@@ -40,12 +34,12 @@ require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- EDIT
   use 'tommcdo/vim-exchange'
   use 'tpope/vim-surround'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
 
   -- STYLE
   use 'kshenoy/vim-signature'
