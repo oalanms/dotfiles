@@ -46,3 +46,19 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     end,
     group = augroup
 })
+
+-- Colorschemes
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = { "*" },
+    callback = function()
+        vim.cmd([[
+        highlight WinSeparator guibg=None
+        highlight Normal ctermbg=NONE guibg=NONE
+        ]])
+    end,
+    group = augroup
+})
+
+vim.cmd([[
+highlight WinSeparator guibg=None
+]])

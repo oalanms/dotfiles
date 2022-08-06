@@ -5,13 +5,7 @@ vim.o.cursorcolumn = true
 vim.o.colorcolumn = 80
 vim.o.mouse = true
 
-vim.cmd([[
-highlight WinSeparator guibg=None
-hi Normal guibg=NONE ctermbg=NONE guifg=NONE ctermfg=NONE
-]])
-
 vim.cmd('colorscheme codedark')
-
 
 vim.o.expandtab = true
 vim.o.tabstop = 4
