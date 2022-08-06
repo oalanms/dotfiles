@@ -9,6 +9,7 @@ vim.cmd('colorscheme codedark')
 
 vim.cmd([[
 highlight WinSeparator guibg=None
+hi Normal guibg=NONE ctermbg=NONE
 ]])
 
 vim.o.expandtab = true
