@@ -9,36 +9,9 @@ vim.cmd('colorscheme codedark')
 
 vim.cmd([[
 highlight WinSeparator guibg=None
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 ]])
-
-local hl = function(thing, opts)
-    vim.api.nvim_set_hl(0, thing, opts)
-end
-
-hl("SignColumn", {
-    bg = "none",
-})
-
-hl("ColorColumn", {
-    ctermbg = 0,
-    bg = "#555555",
-})
-
-hl("CursorLineNR", {
-    bg = "None"
-})
-
-hl("Normal", {
-    bg = "none"
-})
-
-hl("LineNr", {
-    fg = "#5eacd3"
-})
-
-hl("netrwDir", {
-    fg = "#5eacd3"
-})
 
 vim.o.expandtab = true
 vim.o.tabstop = 4
