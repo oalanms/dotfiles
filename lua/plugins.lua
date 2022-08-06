@@ -9,7 +9,6 @@ require('packer').startup(function()
     use 'tpope/vim-eunuch' -- Rename, Move, CFind, Move
     use 'vim-scripts/DoxygenToolkit.vim'
     use 'jremmen/vim-ripgrep'
-    use 'sbdchd/neoformat'
     use 'farmergreg/vim-lastplace'
     use {
         'nvim-treesitter/nvim-treesitter',
