@@ -40,6 +40,7 @@ require('packer').startup(function()
   use 'tommcdo/vim-exchange'
   use 'tpope/vim-surround'
   use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- STYLE
   use 'kshenoy/vim-signature'
