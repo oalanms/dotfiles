@@ -4,10 +4,6 @@ require('packer').startup(function()
   -- PACKER.NVIM
   use 'wbthomason/packer.nvim'
 
-  -- GIT
-  use 'airblade/vim-gitgutter'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
   -- TOOLS
   use 'mbbill/undotree'
   use 'tpope/vim-eunuch' -- Rename, Move, CFind, Move
@@ -42,11 +38,11 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
 
   -- STYLE
+  use 'airblade/vim-gitgutter'
   use 'kshenoy/vim-signature'
   use 'tomasiser/vim-code-dark'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 end
 )
