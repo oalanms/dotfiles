@@ -10,7 +10,7 @@ int main(){
     int a = 1, b = 2;
     int result = calc.sum(a, b);
 
-    int k = calc.sub(334, 34);
+    int k = calc.sub(a, b);
 
     return 0;
 }
