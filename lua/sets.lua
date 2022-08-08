@@ -1,7 +1,7 @@
 vim.g.mapleader = ','
 vim.g.maplocalleader = ' '
 
-vim.o.undodir=os.getenv("HOME").."/.config/nvim/undo"
+vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/undo"
 vim.o.undofile = true
 
 vim.o.syntax = true
@@ -26,3 +26,5 @@ vim.o.swapfile = false
 vim.o.wrap = false
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.opt.updatetime = 50
+vim.opt.shortmess:append("c")

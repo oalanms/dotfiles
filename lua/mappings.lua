@@ -1,10 +1,6 @@
 local utils = require('utils')
 
 local nmap = utils.nmap
-local vmap = utils.vmap
-
-nmap('<leader><leader>', ':Neoformat<CR>')
-vmap('<leader><leader>', ':Neoformat<CR>')
 
 nmap('<F12>', ':tabnew ~/.config/nvim/lua/init.lua<CR>')
 nmap('<F10>', ':so ~/.config/nvim/lua/init.lua<CR>')
@@ -43,8 +39,8 @@ nmap('gH', ':GitGutterPrevHunk<CR>')
 
 local telescope = require('telescope.builtin')
 
-nmap('<leader>f', function() telescope.find_files({hidden=false}) end)
-nmap('<leader>F', function() telescope.find_files({hidden=true}) end)
+nmap('<leader>f', function() telescope.find_files({ hidden = false }) end)
+nmap('<leader>F', function() telescope.find_files({ hidden = true }) end)
 
 nmap('<leader>g', telescope.live_grep)
 nmap('<localleader>r', telescope.lsp_references)
@@ -55,8 +51,10 @@ nmap('<localleader>/', ':noh<CR>')
 nmap('<localleader>u', ':UndotreeShow<CR>:UndotreeFocus<CR>')
 nmap('<localleader>U', ':UndotreeHide<CR>')
 
--- Store / Restore a session.
+-- Save / Restore a session.
 nmap('zS', ':mks! .session.vim<CR>')
 nmap('zs', ':so .session.vim<CR>')
 
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
+
+-- imap('.', '.<C-x><C-o>')
