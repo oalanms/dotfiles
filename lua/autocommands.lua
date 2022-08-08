@@ -41,8 +41,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = {"*"},
     callback = function()
-        local quickfix_bufnr = utils.get_quickfix_bufnr()
-        vim.api.nvim_buf_call(quickfix_bufnr, function() vim.cmd([[normal G]]) end)
+        local quickfix_bufnr = utils.get_quickfix_bufnr();
+        if quickfix_bufnr >= 0 then
+            vim.api.nvim_buf_call(quickfix_bufnr, function() vim.cmd([[normal G]]) end)
+        end
     end,
     group = augroup
 })

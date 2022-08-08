@@ -20,7 +20,7 @@ function M.get_quickfix_bufnr()
             return buffer.bufnr
         end
     end
-    return nil
+    return -1
 end
 
 return M
