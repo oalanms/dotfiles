@@ -40,6 +40,7 @@ require('packer').startup(function()
     use 'airblade/vim-gitgutter'
     use 'kshenoy/vim-signature'
     use 'tomasiser/vim-code-dark'
+    use { "ellisonleao/gruvbox.nvim" }
     use {
         'nvim-lualine/lualine.nvim',
     }

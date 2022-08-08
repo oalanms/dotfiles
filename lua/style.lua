@@ -5,7 +5,8 @@ vim.o.cursorcolumn = true
 vim.o.colorcolumn = 80
 vim.o.mouse = true
 
-vim.cmd('colorscheme codedark')
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox]])
 
 vim.cmd([[
 highlight WinSeparator guibg=None
