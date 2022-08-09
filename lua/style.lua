@@ -21,7 +21,6 @@ vim.o.shiftwidth = 4
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "dart" },
     callback = function()
-        vim.o.shiftwidth = 2
         vim.o.tabstop = 2
     end
 })
@@ -30,6 +29,5 @@ require('nvim-treesitter.configs').setup {
     ensure_installed = { "c", "cpp", "lua", "go", "dart", "python" },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
     },
 }

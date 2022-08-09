@@ -11,7 +11,7 @@ require('packer').startup(function()
     use 'jremmen/vim-ripgrep'
     use 'farmergreg/vim-lastplace'
     use {
-        'nvim-treesitter/nvim-treesitter',
+        'thmsmlr/nvim-treesitter',
         run = ':TSUpdate'
     }
 
