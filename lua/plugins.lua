@@ -5,6 +5,7 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- TOOLS
+    use 'tpope/vim-fugitive'
     use 'mbbill/undotree'
     use 'tpope/vim-eunuch' -- Rename, Move, CFind, Move
     use 'vim-scripts/DoxygenToolkit.vim'
