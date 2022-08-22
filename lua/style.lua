@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "c", "cpp", "lua", "go", "dart", "python" },
+    -- ensure_installed = { "c", "cpp", "lua", "go", "dart", "python" },
     highlight = {
         enable = true,
     },
