@@ -99,6 +99,6 @@ lspconfig.clangd.setup {
     capabilities = capabilities,
     cmd = {
         "clangd",
-        "--resource-dir=/opt/bb/lib/llvm-12.0/lib64/clang/12.0.1/"
+        "--resource-dir=/opt/bb/lib/llvm-14.0/lib64/clang/14.0.6/"
     }
 }
