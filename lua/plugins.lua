@@ -42,7 +42,6 @@ require('packer').startup(function()
 
     -- STYLE
     use 'airblade/vim-gitgutter'
-    use 'kshenoy/vim-signature'
     use 'tomasiser/vim-code-dark'
     use { "ellisonleao/gruvbox.nvim" }
     use {
