@@ -23,5 +23,4 @@ npm instlal -g yarn
 
 # Install packer
 TMUX_PLUGIN_MANAGER_INSTALL_DIR="$HOME/.tmux/plugins/tpm"
-
 [[ ! -d $TMUX_PLUGIN_MANAGER_INSTALL_DIR ]] && git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_MANAGER_INSTALL_DIR
