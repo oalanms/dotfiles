@@ -13,7 +13,6 @@ require('packer').startup(function()
     use 'farmergreg/vim-lastplace'
     use {
         'thmsmlr/nvim-treesitter',
-        run = ':TSUpdate'
     }
 
     -- FLUTTER
