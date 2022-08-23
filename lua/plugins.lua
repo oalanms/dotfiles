@@ -11,9 +11,7 @@ require('packer').startup(function()
     use 'vim-scripts/DoxygenToolkit.vim'
     use 'jremmen/vim-ripgrep'
     use 'farmergreg/vim-lastplace'
-    use {
-        'thmsmlr/nvim-treesitter',
-    }
+    use 'nvim-treesitter/nvim-treesitter'
 
     -- FLUTTER
     use 'thosakwe/vim-flutter'
