@@ -56,6 +56,10 @@ snippet fv
         for(bsl::vector<${1:T}>::iterator ${2:it} = ${3:collection}.begin(); $2 != $3.end(); ++$2){
             $4
         }
+snippet fcv
+        for(bsl::vector<${1:T}>::const_iterator ${2:it} = ${3:collection}.begin(); $2 != $3.end(); ++$2){
+            $4
+        }
 snippet if
         if(${1}){
             ${2}
