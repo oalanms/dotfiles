@@ -60,6 +60,10 @@ nmap('<localleader>l2', ':so .session2.vim<CR>')
 
 nmap('<bslash><bslash>', ':NERDTreeToggle<CR>')
 
+nmap('<localleader>gl', function() 
+    print(utils.get_github_link())
+end)
+
 -- imap('.', '.<C-x><C-o>')
 
 require('lualine').setup({
