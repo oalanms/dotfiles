@@ -5,9 +5,6 @@ vim.o.cursorcolumn = true
 vim.o.colorcolumn = 80
 vim.o.mouse = true
 
-vim.o.background = "dark"
-vim.cmd([[silent! colorscheme gruvbox]])
-
 vim.cmd([[
 highlight WinSeparator guibg=None
 hi Normal guibg=NONE ctermbg=NONE
@@ -33,3 +30,6 @@ require('nvim-treesitter.configs').setup {
         enable = true,
     },
 }
+
+vim.o.background = "dark"
+vim.cmd([[colorscheme codedark]])
