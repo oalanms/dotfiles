@@ -19,8 +19,8 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias nvui="/home/alan/programs/nvui/bin/nvui --ext_multigrid --ext_cmdline"
+alias nvui="/home/thomas/programs/nvui/bin/nvui --ext_multigrid --ext_cmdline"
 
-export PATH="$PATH:/home/alan/Android/Sdk/platform-tools"
-export PATH="$PATH:/home/alan/apps"
-export PATH="$PATH:/home/alan/apps/flutter/bin"
+export PATH="$PATH:/home/thomas/Android/Sdk/platform-tools"
+export PATH="$PATH:/home/thomas/apps"
+export PATH="$PATH:/home/thomas/apps/flutter/bin"

@@ -21,7 +21,7 @@ vim.o.shiftwidth = 4
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "dart" },
     callback = function()
-        vim.o.tabstop = 2
+        vim.o.shiftwidth = 2
     end
 })
 
